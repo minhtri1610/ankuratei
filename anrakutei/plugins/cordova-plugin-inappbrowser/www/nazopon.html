@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page>
+    <ons-dialog var="nazoponDialog" ng-controller="NazoponCtrl" ng-dialogheight>
+
+        <div class="coupon-title">
+            <div class="coupon-col-log">
+                <img src="img/tenpo/map_logo_254x146.png" class="coupon-col-log-img">
+            </div>
+            <div class="coupon-col-tenpo">
+                <div class="coupon-num-type">
+                    <p class="nazotitle1">アプリ・モバイルサイト限定!!</p>
+                    <p class="nazotitle2"><span class="nazotitle3" style="font-size: 12px;font-weight: 1px;">スペシャルクーポン　</span><span class="nazomoji" style="font-size: 17px;font-weight: bolder;width: 100%;">なぞポン</span></p>
+                </div>
+            </div>
+            <div class="coupon-col-x">
+                <img src="img/tenpo/map_closeBtn58.png" class="coupon-col-x-img" single-click="onClose()" ng-closebutton>
+            </div>
+
+        </div>
+
+        <!---チャレンジ前--->
+        <div class="nazogif" ng-if="challengeStatus === 0">
+            <img ng-src="{{nazogif}}" class="nazogif-img"/>
+        </div>
+
+        <!---チャレンジ中--->
+        <div class="nazogif" ng-if="challengeStatus === 1">
+            <img ng-src="{{nazogif}}" class="nazogif-img"/>
+        </div>
+
+        <div class="nazopon-description" ng-if="challengeStatus === 1 || challengeStatus === 0">
+            <span class="nazopon-description-contents" ng-nazopondes>
+                「なぞポン」は、アプリ・モバイルサイト限定クーポンです。
+                複数の限定クーポンのなかから一定の確率で選ばれた１枚が、
+                お得なクーポンに追加されます。<br>
+                <br>
+                お得なクーポンに追加される「なぞポン」は、１枚のみとなります。
+                <br>
+                <br>
+                「なぞポン」は各種用意されておりますが、キャンペーン内容・期間等により変更されることが
+                ございます。
+            </span>
+        </div>
+
+        <div class="nazopon-button" ng-if="challengeStatus === 0">
+            <img single-click="challenge()" src="img/coupons/coupon_btn_challenge_normal_564x164.png" class="nazopon-button-img" ng-challengbutton/>
+        </div>
+
+        <!---チャレンジ中--->
+        <div class="disable-nazopon-button" ng-if="challengeStatus === 1">
+            <img src="img/coupons/coupon_btn_challenge_normal_564x164.png" class="disable-nazopon-button-img" ng-challengbutton/>
+        </div>
+
+        <!---チャレンジ後--->
+        <div class="nazopon-result" ng-if="challengeStatus === 2">
+
+            <div class="nazopon-result-bk-oshi" ng-if="nazoRank === 'oshi'">
+                <div class="nazopon-img-oshi" get-nazoimg="{{::nazoRank}}">
+                    <div fit-nazopon="{{::nazoponImgUrl}}" class="cimg"></div>
+                </div>
+            </div>
+
+            <div class="nazopon-result-bk-getsp" ng-if="nazoRank === 'getsp'">
+                <div class="nazopon-img-getsp" get-nazoimg="{{::nazoRank}}">
+                    <div fit-nazopon="{{::nazoponImgUrl}}" class="cimg"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nazo-period" ng-if="challengeStatus === 2">
+            <span class="nazo-period-text" ng-nazopondes>{{::period}}営業日限り有効</span>
+        </div>
+        <div class="nazo-comment" ng-if="challengeStatus === 2">
+            <span>ダイアログを閉じると、「なぞポン」が<br>お得なクーポンに追加されます。</span>
+        </div>
+
+    </ons-dialog> 
+</ons-page>

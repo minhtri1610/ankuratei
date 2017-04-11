@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    background-image:url(../img/ajax-loader20160608.gif);
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+.select-area {
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    margin: 8px 0 8px 8px;
+    white-space: normal;
+    background: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+/*    height: 48px;*/
+    border-bottom: 1px solid transparent;
+    padding: 5px;
+    transition-property: background,box-shadow;
+    transition-duration: 0.3s;
+}
+
+.area {
+    width: 100px;
+}
+
+.button-pos {
+    right: 2px;
+    background-image: -webkit-linear-gradient(top, #520, #520);
+    background-image: -moz-linear-gradient(top, #520, #520);
+    background-image: -ms-linear-gradient(top, #520, #520);
+    background-image: -o-linear-gradient(top, #520, #520);
+    background-image: linear-gradient(to bottom, #4169E1, #4169E1);
+    -webkit-border-radius: 14;
+    -moz-border-radius: 14;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 11px 20px 10px 20px;
+    border: none;
+    text-decoration: none;
+    width: 100%;
+}
+
+.tenponame {
+	text-align: center;
+}
+
+/* hide close button on infoWindow */
+.gm-style-iw {
+    margin-left: 10px;
+}
+
+/*.gm-style-iw + div {
+    display: none;
+}*/
+
+#ken-select-box {
+    font-size: 16px;
+    min-width: 22px;
+    margin-right: 5px;
+    padding: 0;
+    float: left;
+}
+
+#shiku-select-box {
+    font-size: 16px;
+    float: left;
+    display: block;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page ng-controller="InfoCtrl" ng-device-backbutton="backDeal()" id="info">
+    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+        <div class="left" ng-style="{{::iosLeftStyle}}">
+            <img src="img/menu/menu_Icon_1_appmenu_80x72.png" class="menu-icon" single-click="menu.toggleMenu()">
+        </div>
+        <div class="center" ng-style="{{::iosCenterStyle}}">おしらせ</div>
+    </ons-toolbar>
+
+    <div class="info-ctrl">
+        <ons-list class="info-list" id="info-top">
+
+            <!-- リスト情報生成 -->
+            <ons-list-item class="info-list-item" ng-repeat="item in feeds">
+
+                <!-- デフォルト表示 -->
+                <div ng-if="item.disp_type == 99">
+                    <!-- 画像表示 -->
+                    <div style="line-height: 0">
+                        <img width="100%" src="img/info/initial_banner_Large.png" style="padding-bottom: 10px;">
+                    </div>
+                    <!-- コメント表示 -->
+                    <div class="info-text">
+                        <!-- タイトル -->
+                        <h3 style="text-align: center;">安楽亭の最新情報をチェック!!</h3>
+                        <!-- 本文 -->
+                        <p style="color: #000000; text-align: center; padding-bottom: 4px;">こんにちは。</p>
+                        <p style="color: #000000;">ここでは、安楽亭のさまざまな情報をお届けします。最新のフェア開催や新商品のご紹介はもちろん、アプリだけのお得な情報があるかも?!　いつでもどこでも安楽亭をチェック!!</p>
+                    </div>
+                </div>
+
+                <!-- 画像のみ表示 -->
+                <div ng-if="item.disp_type == 0">
+                    <!-- 画像表示 -->
+                    <div style="line-height: 0" single-click="openLink(item.link_url)"><img width="100%" ng-src="{{item.img}}"></div>
+                    <!-- アイコン表示 -->
+                    <div class="left-block"><img ng-src="{{item.icon}}" width="60%" height="auto"></div>
+                    <!-- 日付表示 -->
+                    <div class="right-block-dt">
+                        <label ng-show="{{item.isNew}}" style="color: #e71f19">{{item.disp_date}}</label>
+                        <label ng-hide="{{item.isNew}}" style="color: #666666">{{item.disp_date}}</label>
+                    </div>
+                    <div class="clr-block"></div>
+                    <!-- クーポン画面へのリンクボタン -->
+                    <ons-button modifier="large" class="link_btn" ng-show="{{item.link_flg}}" single-click="gotoCoupon(item.id)">
+                        {{item.link_title}}
+                    </ons-button>
+                </div>
+
+                <!-- 画像＋コメント表示 -->
+                <div ng-if="item.disp_type == 1">
+                    <!-- 画像表示 -->
+                    <div style="line-height: 0" single-click="openLink(item.link_url)"><img width="100%" ng-src="{{item.img}}"></div>
+                    <!-- アイコン表示 -->
+                    <div class="left-block"><img ng-src="{{item.icon}}" width="60%" height="auto"></div>
+                    <!-- 日付表示 -->
+                    <div class="right-block-dt">
+                        <label ng-show="{{item.isNew}}" style="color: #e71f19">{{item.disp_date}}</label>
+                        <label ng-hide="{{item.isNew}}" style="color: #666666">{{item.disp_date}}</label>
+                    </div>
+                    <!-- コメント表示 -->
+                    <div class="info-text">
+                        <!-- タイトル -->
+                        <h3>{{item.title}}</h3>
+                        <!-- 本文 -->
+                        <div id="com-short{{item.index}}" style="height: 36px; overflow: hidden;" ng-hide="isDetail[$index]">
+                            <p ng-bind-html="item.detail | linky:'_blank'"></p>
+                        </div>
+                        <div id="com-all{{item.index}}" style="min-height: 20px;" ng-show="isDetail[$index]">
+                            <p id="comment{{item.index}}" ng-bind-html="item.detail | linky:'_blank'"></p>
+                        </div>
+                        <!-- 折りたたみリンク -->
+                        <div id="com-open{{item.index}}" class="right-block" single-click="showDetail($index, item.id)" ng-hide="isDetail[$index]">{{item.continue_title}}</div>
+                        <div id="com-close{{item.index}}" class="right-block" single-click="hideDetail($index)" ng-show="isDetail[$index]">閉じる</div>
+                        <div class="clr-block"></div>
+                        <!-- クーポン画面へのリンクボタン -->
+                        <div ng-show="{{item.link_flg}}" style="height: 21px;"></div>
+                        <ons-button modifier="large" class="link_btn" ng-show="{{item.link_flg}}" single-click="gotoCoupon(item.id)">
+                            {{item.link_title}}
+                        </ons-button>
+                    </div>
+                </div>
+
+                <!-- コメントのみ表示 -->
+                <div ng-if="item.disp_type == 2">
+                    <!-- アイコン表示 -->
+                    <div class="left-block"><img ng-src="{{item.icon}}" width="60%" height="auto"></div>
+                    <!-- 日付表示 -->
+                    <div class="right-block-dt">
+                        <label ng-show="{{item.isNew}}" style="color: #e71f19">{{item.disp_date}}</label>
+                        <label ng-hide="{{item.isNew}}" style="color: #666666">{{item.disp_date}}</label>
+                    </div>
+                    <!-- コメント表示 -->
+                    <div class="info-text">
+                        <!-- タイトル -->
+                        <h3>{{item.title}}</h3>
+                        <!-- 本文 -->
+                        <div id="com-short{{item.index}}" style="height: 36px; overflow: hidden;" ng-hide="isDetail[$index]">
+                            <p ng-bind-html="item.detail | linky:'_blank'"></p>
+                        </div>
+                        <div id="com-all{{item.index}}" style="min-height: 20px;" ng-show="isDetail[$index]">
+                            <p id="comment{{item.index}}" ng-bind-html="item.detail | linky:'_blank'"></p>
+                        </div>
+                        <!-- 折りたたみリンク -->
+                        <div id="com-open{{item.index}}" class="right-block" single-click="showDetail($index, item.id)" ng-hide="isDetail[$index]">{{item.continue_title}}</div>
+                        <div id="com-close{{item.index}}" class="right-block" single-click="hideDetail($index)" ng-show="isDetail[$index]">閉じる</div>
+                        <div class="clr-block"></div>
+                        <!-- クーポン画面へのリンクボタン -->
+                        <div ng-show="{{item.link_flg}}" style="height: 21px;"></div>
+                        <ons-button modifier="large" class="link_btn" ng-show="{{item.link_flg}}" single-click="gotoCoupon(item.id)">
+                            {{item.link_title}}
+                        </ons-button>
+                    </div>
+                </div>        
+            </ons-list-item>
+        </ons-list>
+    </div>
+</ons-page>

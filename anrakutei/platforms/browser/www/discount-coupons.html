@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page modifier="coupons" ng-controller="CouponsCtrl" ng-device-backbutton="backDeal()" id="coupon">
+
+    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+        <div class="left" ng-style="{{::iosLeftStyle}}">
+            <img src="img/menu/menu_Icon_1_appmenu_80x72.png" class="menu-icon" single-click="menu.toggleMenu()">
+        </div>
+        <div class="center" ng-style="{{::iosCenterStyle}}">お得なクーポン</div>
+    </ons-toolbar>
+
+    <div class="use-conditions">
+        <div class="use-conditions-contents">
+            ご注文の際に、この画面を店員にお見せください。(チラシ併用でお一人様２枚まで)
+        </div>
+        <div class="use-conditions-button" ng-useclick>
+        </div>
+    </div>
+
+    <div class="offline-contents" ng-show="!netStatus">
+        通信ができない環境の可能性があります。<br><br>
+        本アプリケーションはインターネットから最新の情報を取得しているため、
+        通信可能な環境でご利用ください。<br>
+    </div>
+
+    <!--クーポン情報が無い場合は、以下は表示しない--> 
+    <div ng-hide="NoData">
+        <ons-carousel class="carousel-area" direction="horizontal" ng-show="netStatus" item-width="80%" auto-scroll-ratio="0.0" var="carousel" ons-postchange="wakeUpAngular = 1337" auto-refresh swipeable overscrollable auto-scroll>
+            <ons-carousel-item class="carousel-area-whitespace">
+            </ons-carousel-item>
+            <ons-carousel-item ng-if="nazoponStatus === 'nazoBefore'" class="carousel-area-nazo-before">
+                <div class="first-background">
+                    <div class="first-background-img">
+                    </div>
+                </div>
+                <div class="nazobefore-button" ng-nazoponclick>
+                </div>
+            </ons-carousel-item>
+            <ons-carousel-item ng-if="nazoponStatusRank === 'oshi'" class="carousel-area-nazo-oshi">
+                <div class="oshi-spm-background-div">
+                    <div class="oshi-spm-background" ngtop>
+                        <div class="oshi-spm-image" after-img="{{::nazoponStatusRank}}" single-click="togle()">
+                            <div fit-nazocoupon class="cimg"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <ons-carousel-cover class="after-cover" ng-if="bookmarkArr.indexOf(-1) > -1" ng-coverposition>
+                    <img class="bookmark-mark-nazo" src="img/coupons/sizeNormal/coupon_icon_star_94x94.png" />
+                </ons-carousel-cover>
+                <div class="coupon-label" ng-label>
+                    <span style="color: #a3a3a3;">{{::expirationDate}}</span>営業日限り<span style="color: red;text-align: center;">有効</span>
+                </div>
+            </ons-carousel-item>
+            <ons-carousel-item ng-if="nazoponStatusRank === 'getsp'" class="carousel-area-nazo-getsp">
+                <div class="getsp-spm-background-div">
+                    <div class="getsp-spm-background" ngtop>
+                        <div class="sp-spm-image" after-img="{{::nazoponStatusRank}}" single-click="togle()">
+                            <div fit-nazocoupon class="cimg"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <ons-carousel-cover class="after-cover" ng-if="bookmarkArr.indexOf(-1) > -1" ng-coverposition>
+                    <img class="bookmark-mark-nazo" src="img/coupons/sizeNormal/coupon_icon_star_94x94.png" />
+                </ons-carousel-cover>
+                <div class="coupon-label" ng-label>
+                    <span style="color: #a3a3a3;">{{::expirationDate}}</span>営業日限り<span style="color: red;text-align: center;">有効</span>
+                </div>       
+            </ons-carousel-item>
+
+            <ons-carousel-item ng-if="nazoponStatus === 'nazoBefore'" class="carousel-area-items-nazo-before" ng-repeat="co in couponsInfo">
+                <div class="spm-background-div">
+                    <div class="spm-background">
+                        <div class="spm-image" back-img="{{::nazoponStatus}}" single-click="togle()">
+                            <div fit-coupon="{{co.img}}" class="cimg"></div>
+                        </div>
+                    </div>
+                </div>
+                <ons-carousel-cover class="before-cover" ng-if="bookmarkArr.indexOf($index) > -1" ng-coverposition>
+                    <img class="bookmark-mark" src="img/coupons/sizeNormal/coupon_icon_star_94x94.png" />
+                </ons-carousel-cover>
+                <div class="coupon-label" ng-label>
+                    <span style="color: #a3a3a3;">{{::expirationDate}}</span>営業日限り<span style="color: red;text-align: center;">有効</span>
+                </div>
+            </ons-carousel-item>
+            <ons-carousel-item ng-if="nazoponStatus === 'nazoAfter'" class="carousel-area-items-nazo-after" ng-repeat="co in couponsInfo">
+                <div class="after-spm-background-div">
+                    <div class="after-spm-background">
+                        <div class="after-spm-image" back-img="{{::nazoponStatus}}" single-click="togle()">
+                            <div fit-coupon="{{co.img}}" class="cimg"></div>
+                        </div>
+                    </div>
+                </div>
+                <ons-carousel-cover class="after-cover"  ng-if="bookmarkArr.indexOf($index) > -1" ng-coverposition>
+                    <img class="bookmark-mark" src="img/coupons/sizeNormal/coupon_icon_star_94x94.png" />
+                </ons-carousel-cover>
+                <div class="coupon-label" ng-label>
+                    <span style="color: #a3a3a3;">{{::expirationDate}}</span>営業日限り<span style="color: red;text-align: center;">有効</span>
+                </div>
+            </ons-carousel-item>
+            <ons-carousel-item class="carousel-area-whitespace">
+            </ons-carousel-item>
+        </ons-carousel>
+
+        <div class="next-coupon-navi-backgroupd" ng-show="netStatus">
+            <img class="next-coupon-navi-backgroupd-img" src="img/coupons/arrowBtn_right_156x184.png" ng-if="carousel.getActiveCarouselItemIndex() < pageNum - 1" single-click="carousel.next()"/>
+        </div>
+        <div class="prev-coupon-navi-backgroupd" ng-show="netStatus">
+            <img class="prev-coupon-navi-backgroupd-img" src="img/coupons/arrowBtn_left_156x184.png" ng-if="carousel.getActiveCarouselItemIndex() > 0" single-click="carousel.prev()"/>
+        </div>
+
+        <div class="bookmark-nazoBefor" ng-show="nazoponStatus === 'nazoBefore' && carousel.getActiveCarouselItemIndex() === 0 && netStatus">
+            <div class="bookmark-left">
+                <img class="bookmark-nazoBefor-navi-l" src="img/coupons/sizeNormal/coupon_bookmarkbtn_L_act_200x172.png" single-click="toBefore()" ng-show="selectLeftHave === true"/>
+                <img class="bookmark-nazoBefor-navi-l" src="img/coupons/sizeNormal/coupon_bookmarkbtn_L_dis_200x172.png" ng-show="selectLeftHave === false"/>
+            </div>
+
+            <div class="bookmark-center">
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C1_240x172.png" single-click="togle()" ng-show="bookmarkFlag === false && carousel.getActiveCarouselItemIndex() !== 0"/>
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C2_240x172.png" single-click="togle()" ng-show="bookmarkFlag === true && carousel.getActiveCarouselItemIndex() !== 0"/>
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C0_240x172.png" ng-show="carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoBefore'"/>
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C1_240x172.png" single-click="togle()" ng-show="bookmarkFlag === false && carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoAfter'"/>
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C2_240x172.png" single-click="togle()" ng-show="bookmarkFlag === true && carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoAfter'"/>
+
+            </div>
+
+            <div class="bookmark-right">
+                <img class="bookmark-nazoBefor-navi-r" src="img/coupons/sizeNormal/coupon_bookmarkbtn_R_act_200x172.png" single-click="toAfter()" ng-show="selectRightHave === true"/>
+                <img class="bookmark-nazoBefor-navi-r" src="img/coupons/sizeNormal/coupon_bookmarkbtn_R_dis_200x172.png" ng-show="selectRightHave === false"/>
+            </div>
+        </div>
+
+        <div class="bookmark" ng-show="((nazoponStatus === 'nazoBefore' && carousel.getActiveCarouselItemIndex() !== 0) || nazoponStatus === 'nazoAfter') && netStatus">
+            <div class="bookmark-left">
+                <img class="bookmark-nazoBefor-navi-l" src="img/coupons/sizeNormal/coupon_bookmarkbtn_L_act_200x172.png" single-click="toBefore()" ng-show="selectLeftHave === true"/>
+                <img class="bookmark-nazoBefor-navi-l" src="img/coupons/sizeNormal/coupon_bookmarkbtn_L_dis_200x172.png" ng-show="selectLeftHave === false"/>
+            </div>
+
+            <div class="bookmark-center">
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C1_240x172.png" single-click="togle()" ng-show="bookmarkFlag === false && carousel.getActiveCarouselItemIndex() !== 0"/>
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C2_240x172.png" single-click="togle()" ng-show="bookmarkFlag === true && carousel.getActiveCarouselItemIndex() !== 0"/>
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C0_240x172.png" ng-show="carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoBefore'"/>
+
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C1_240x172.png" single-click="togle()" ng-show="bookmarkFlag === false && carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoAfter'"/>
+                <img class="bookmark-nazoBefor-navi-c" src="img/coupons/sizeNormal/coupon_bookmarkbtn_C2_240x172.png" single-click="togle()" ng-show="bookmarkFlag === true && carousel.getActiveCarouselItemIndex() === 0 && nazoponStatus === 'nazoAfter'"/>
+
+            </div>
+
+            <div class="bookmark-right">
+                <img class="bookmark-nazoBefor-navi-r" src="img/coupons/sizeNormal/coupon_bookmarkbtn_R_act_200x172.png" single-click="toAfter()" ng-show="selectRightHave === true"/>
+                <img class="bookmark-nazoBefor-navi-r" src="img/coupons/sizeNormal/coupon_bookmarkbtn_R_dis_200x172.png" ng-show="selectRightHave === false"/>
+            </div>
+        </div>
+
+        <div class="bookmark-paging-area" ng-show="netStatus" >
+            <div class="bookmark-paging">
+                <div class="bookmark-paging-contents">{{((bookmarkArr.indexOf(carousel.getActiveCarouselItemIndex() - 1) + 1) === 0) ? '-' : (bookmarkArr.indexOf(carousel.getActiveCarouselItemIndex() - 1) + 1)}}/{{bookmarkPageNum}}</div>
+            </div>
+            <div class="bookmark-paging-area-img">
+                <div class="navi-icons-area" ng-repeat="icon in amariArr" ng-show="(pageCount === 0)">
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_Point_18x18.png" ng-show="bookmarkArr.indexOf($index - 1) > -1 && carousel.getActiveCarouselItemIndex() !== $index"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_Point_18x18.png" ng-show="bookmarkArr.indexOf($index - 1) > -1 && carousel.getActiveCarouselItemIndex() === $index"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_18x18.png" ng-show="bookmarkArr.indexOf($index - 1) < 0 && carousel.getActiveCarouselItemIndex() !== $index"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_18x18.png" ng-show="bookmarkArr.indexOf($index - 1) < 0 && carousel.getActiveCarouselItemIndex() === $index"/>
+                </div>
+
+                <div class="navi-icons-area" ng-repeat="icon in fullCouponArr" ng-show="(pageCount !== 0) && (carousel.getActiveCarouselItemIndex() < pageCount * maxBookmarkNum)">
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_Point_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) > -1 && carousel.getActiveCarouselItemIndex() !== (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_Point_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) > -1 && carousel.getActiveCarouselItemIndex() === (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) < 0 && carousel.getActiveCarouselItemIndex() !== (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) < 0 && carousel.getActiveCarouselItemIndex() === (nowPage + $index)"/>
+                </div>
+
+                <div class="navi-icons-area" ng-repeat="icon in amariArr" ng-show="(pageCount !== 0) && ((carousel.getActiveCarouselItemIndex() + 1) > pageCount * maxBookmarkNum)">
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_Point_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) > -1 && carousel.getActiveCarouselItemIndex() !== (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_Point_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) > -1 && carousel.getActiveCarouselItemIndex() === (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_normal_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) < 0 && carousel.getActiveCarouselItemIndex() !== (nowPage + $index)"/>
+                    <img class="navi-icons" src="img/coupons/sizeNormal/coupon_bookmark_select_18x18.png" ng-show="bookmarkArr.indexOf(nowPage + $index - 1) < 0 && carousel.getActiveCarouselItemIndex() === (nowPage + $index)"/>
+                </div>
+
+            </div>
+            <div class="coupong-paging">
+                <div class="coupong-paging-value">
+                    {{(((pageNum === 0) ? 0 : (carousel.getActiveCarouselItemIndex() + 1)) > pageNum) ? pageNum : (carousel.getActiveCarouselItemIndex() + 1)}}/{{pageNum}}
+                </div>
+            </div>
+        </div>
+    </div>
+</ons-page>

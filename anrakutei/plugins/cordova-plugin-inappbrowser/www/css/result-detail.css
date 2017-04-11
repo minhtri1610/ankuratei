@@ -1,0 +1,231 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/03/25, 17:00:00
+    Author     : kyo
+*/
+
+.info-title {
+    padding-left: 4%;
+    padding-top: 4%;
+    padding-right: 4%;
+    width: 92%;
+    border-bottom: none !important;
+    height: 11%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.info-title
+.detial-tenpo-icon {
+    max-width: 20%;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    position: relative;
+}
+
+.detial-tenpo-icon
+.detial-tenpo-icon-img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.info-title
+.tenpo-info {
+    width: 65%;
+    height: 100%;
+    float: left;
+    position: relative;
+    display: table;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.tenpo-info
+.tenpo-kind {
+    color: #FFF;
+    line-height: 1.2;
+    vertical-align: middle;
+    font-size: 18px;
+    position: relative;
+    font-weight: bold;
+    display: table-cell;
+}
+
+.tenpo-info
+.tenpo-name {
+    margin-left: 5%;
+    color: #FFF;
+    line-height: 1.2;
+    vertical-align: middle;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tenpo-info
+.kind {
+    margin: 0 0 0 5%;
+}
+
+.tenpo-info
+.name {
+    margin: 0 0 0 5%;
+    font-size: 20px;
+}
+
+.info-title
+.close-detail {
+    width: 15%;
+    height: 100%;
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.close-detail
+.close-detail-img {
+    width: 80%;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    float: right;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.list--detail {
+    position: relative;
+    overflow-y: scroll;
+    margin: 0 5%;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.list--detail td{
+    padding: 0;
+    vertical-align: top;
+}
+
+.icons-area {
+    clear:both;
+    padding: 2% 4% 0 4%;
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.info-icons {
+    height: auto;
+    float: left;
+    width: 11.285%;
+    margin-left: 1px;
+    margin-top: 1px;
+    clear: right;
+}
+
+.info-icons:nth-child(n+1):not(:nth-child(n+9)) {
+    margin-top: 0px;
+}
+
+.info-icons:nth-child(8n+1) {
+    margin-left: 0px;
+}
+
+.info-icons
+.info-icons-img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.to-back {
+    clear: both;
+    padding: 2% 4%;
+    width: 92%;
+    height: 20.3%;
+    position: relative;
+}
+
+.info-comment {
+    background-color: #a65d29;
+    padding: 12px;
+}
+
+.info-time {
+    background-color: #a65d29;
+    width: 100%;
+    position: relative;
+    height: 23px;
+}
+
+.bottom-icons {
+    position: absolute;
+    padding: 2% 4% 4% 4%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 16%;
+    bottom: 0;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.bottom-icons
+.bottom-icons-renkei {
+    max-width: 28%;
+    float: left;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.bottom-icons
+.bottom-icons-denwa {
+    max-width: 28%;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.bottom-icons
+.bottom-icons-enkai {
+    max-width: 28%;
+    float: right;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.bottom-icons-renkei
+.bottom-icons-renkei-img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bottom-icons-denwa
+.bottom-icons-denwa-img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bottom-icons-enkai
+.bottom-icons-enkai-img {
+    vertical-align: middle;
+    width: 100%;
+}

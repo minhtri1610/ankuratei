@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page ng-controller="SpecialCtrl" ng-device-backbutton="backDeal()" id="wallpaper">
+    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+        <div class="left" ng-style="{{::iosLeftStyle}}">
+            <img src="img/menu/menu_Icon_1_appmenu_80x72.png" class="menu-icon" single-click="menu.toggleMenu()">
+        </div>
+        <div class="center" ng-style="{{::iosCenterStyle}}">スペシャル</div>
+    </ons-toolbar>
+
+    <div class="spaecial-space">
+    </div>
+
+    <div class="carousel-back-frame">
+        <img class="carousel-back-frame-img" ng-src="{{::frameImg}}" frame-watch/>
+    </div>
+
+    <ons-carousel class="special-carousel-area" direction="horizontal" item-width="45%" auto-scroll-ratio="0.0" var="specialCarousel" ons-postchange="wakeUpAngular = 1337" auto-refresh swipeable overscrollable auto-scroll>
+
+        <ons-carousel-item class="special-frame">
+            <div class="special-frame-img"></div>
+        </ons-carousel-item>
+
+        <ons-carousel-item class="special-frame" ng-repeat="wallpaper in wallpaperInfo" ng-if="netStatus === true" ng-frame>
+            <div class="special-img-back-frame">
+                <img class="special-frame-img" ng-src="{{::wallpaper.img}}"/>
+            </div>
+        </ons-carousel-item>
+
+        <ons-carousel-item class="special-frame" ng-repeat="wallpaper in offlineWallpaperInfo" ng-if="netStatus === false" ng-frame>
+            <div class="special-img-back-frame">
+                <img class="special-frame-img" ng-src="{{::wallpaper.img}}"/>
+            </div>
+        </ons-carousel-item>
+
+        <ons-carousel-item class="special-frame">
+            <div class="special-frame-img"></div>
+        </ons-carousel-item>
+
+        <ons-carousel-item class="special-frame">
+            <div class="special-frame-img"></div>
+        </ons-carousel-item>
+
+    </ons-carousel>
+
+    <div class="special-prev">
+        <img class="special-prev-left-img" ng-show="specialCarousel.getActiveCarouselItemIndex() > 0" single-click="specialCarousel.prev()" src="img/coupons/arrowBtn_left_156x184.png">
+        <img class="special-prev-right-img" ng-show="specialCarousel.getActiveCarouselItemIndex() + 1 < pageNum" single-click="specialCarousel.next()" src="img/coupons/arrowBtn_right_156x184.png">
+    </div>
+
+    <div class="special-download">
+        <img class="special-download-img" on-long-press="itemOnLongPress()" on-touch-end="itemOnTouchEnd(wallpaperInfo[specialCarousel.getActiveCarouselItemIndex()].dimg)" src="img/special/Spacial_saveBtn_700x164.png" ng-show="netStatus === true">
+        <img class="special-download-img" on-long-press="itemOnLongPress()" on-touch-end="itemOnTouchEnd(offlineWallpaperInfo[specialCarousel.getActiveCarouselItemIndex()].dimg)" src="img/special/Spacial_saveBtn_700x164.png" ng-show="netStatus === false">
+    </div>
+
+    <div class="special-paging-area">
+        <div class="special-paging-space">
+        </div>
+        <div class="navi-icnos-area">
+            <div class="special-paging-area-img" ng-repeat="icon in amariArr" ng-show="pageCount === 0">
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_normal_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() !== $index"/>
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_select_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() === $index"/>
+            </div>
+            <div class="special-paging-area-img" ng-repeat="icon in fullWallpaper" ng-show="pageCount !== 0 && (specialCarousel.getActiveCarouselItemIndex() < pageCount * maxIconNum)">
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_normal_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() !== ($index + nowPage)"/>
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_select_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() === ($index + nowPage)"/>
+            </div>
+            <div class="special-paging-area-img" ng-repeat="icon in amariArr" ng-show="pageCount !== 0 && ((specialCarousel.getActiveCarouselItemIndex() + 1) > pageCount * maxIconNum)">
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_normal_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() !== ($index + nowPage)"/>
+                <img class="navi-icon" src="img/coupons/coupon_bookmark_select_32x32.png" ng-show="specialCarousel.getActiveCarouselItemIndex() === ($index + nowPage)"/>
+            </div>
+        </div>
+        <div class="special-paging">
+            <div class="special-paging-value">
+                {{(pageNum === 0) ? 0 : (specialCarousel.getActiveCarouselItemIndex() + 1)}}/{{pageNum}}
+            </div>
+        </div>
+    </div>
+
+</ons-page>

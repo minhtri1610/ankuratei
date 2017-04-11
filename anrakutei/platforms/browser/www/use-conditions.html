@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page>
+    <ons-dialog ng-controller="UseConditions" var="useConditionsDialog" ng-dialogheight>
+
+        <div class="use-conditions-title" ng-title>
+            <div class="use-conditions-title-log">
+                <img src="img/tenpo/map_logo_254x146.png" class="use-conditions-title-img"/>
+            </div>
+            <div class="use-conditions-title-txt">
+                <p class="use-conditions-title-txt-content">ご利用条件</p>
+            </div>
+            <div class="use-conditions-col-x">
+                <img src="img/tenpo/map_closeBtn58.png" class="use-conditions-col-x-img" single-click="useConditionsDialog.destroy();" ng-closebutton/>
+            </div>
+        </div>
+
+        <div class="conditions-description">
+            <div class="conditions-description-contents" ng-bind-html="contents">
+            </div>
+        </div>
+
+    </ons-dialog> 
+</ons-page>

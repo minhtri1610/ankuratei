@@ -1,0 +1,8 @@
+/* 
+   カレンダの日付色
+   jquery-ui.css の先頭で import させてます
+*/
+.holiday a.ui-state-default{color:#f60;}
+.sunday a.ui-state-default{color:#f00;}
+.saturday a.ui-state-default{color:#00f;}
+.weekday a.ui-state-default{color:#333;}

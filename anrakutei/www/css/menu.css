@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/03/25, 17:00:00
+    Author     : kyo
+*/
+
+/* 文字サイズの自動調整：ON */
+.appbody {
+    -webkit-text-size-adjust: auto;
+}
+
+.statusbar {
+    height: 20px;
+    width: 100%;
+    background-color: #cc9090;
+    position: absolute;
+    z-index: 20000;
+}
+
+.statusbar2 {
+    height: 20px;
+    width: 100%;
+    background-color: #bababa;
+    position: absolute;
+    z-index: 20000;
+}
+
+.toolbar--title {
+    background-color: #b35959;
+}
+
+.tab img{
+    width: auto;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.navigation-bar__title{
+    line-height: normal;
+    padding-top: 13px;
+}
+
+/* タブバーのボーダー設定 */
+.tab-bar {
+    border-top: none;
+}
+
+.tab-bar__content {
+    border-bottom: 1px solid #CCC;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page>
+    <ons-dialog var="dialog" ng-controller="DetailCtrl" ng-dialogheight>
+        <div class="info-title">
+            <div class="detial-tenpo-icon">
+                <img src="img/tenpo/map_logo_254x146.png" class="detial-tenpo-icon-img">
+            </div>
+            <div class="tenpo-info">
+                <div class="tenpo-kind">
+                    <p class="kind">{{tenpoinfo.tenpotype}}</p>
+                    <p class="name">{{tenpoinfo.tenponame}}</p>
+                </div>
+            </div>
+            <div class="close-detail">
+                <img src="img/tenpo/map_closeBtn58.png" class="close-detail-img" single-click="freshMap()" ng-closebutton>
+            </div>
+        </div>
+
+        <div class="icons-area">
+            <div class="info-icons" ng-repeat="icon in serviceIcon">
+                <img ng-src="{{icon.url}}" class="info-icons-img"/>
+            </div>
+        </div>
+
+        <div class="to-back" ngresize>
+            <div class="to-wrapper">
+                <div class="to-image">
+                </div>
+                <div class="shopper-comment">
+                    {{tenpoinfo.comment}}
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="serviceIcon.length >= 9" class="list--detail" style="height: 19%;" ng-detial>
+            <table>
+                <tr>
+                    <td nowrap>営業時間： </td>
+                    <td style="width: 100%">{{tenpoinfo.opentime}}～{{tenpoinfo.closetime}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>客席数　： </td>
+                    <td style="width: 100%">{{tenpoinfo.chair}}席</td>
+                </tr>
+                <tr>
+                    <td nowrap>駐車場　： </td>
+                    <td style="width: 100%">{{(tenpoinfo.park === 0) ? 'なし' : tenpoinfo.park + '台'}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>電話番号： </td>
+                    <td style="width: 100%">{{tenpoinfo.tel}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>住所　　： </td>
+                    <td style="width: 100%">{{tenpoinfo.address}}<br>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <div ng-if="serviceIcon.length < 9" class="list--detail" style="height: 28%;" ng-detial>
+            <table>
+                <tr>
+                    <td nowrap>営業時間： </td>
+                    <td style="width: 100%">{{tenpoinfo.opentime}}～{{tenpoinfo.closetime}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>客席数　： </td>
+                    <td style="width: 100%">{{tenpoinfo.chair}}席</td>
+                </tr>
+                <tr>
+                    <td nowrap>駐車場　： </td>
+                    <td style="width: 100%">{{(tenpoinfo.park === 0) ? 'なし' : tenpoinfo.park + '台'}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>電話番号： </td>
+                    <td style="width: 100%">{{tenpoinfo.tel}}</td>
+                </tr>
+                <tr>
+                    <td nowrap>住所　　： </td>
+                    <td style="width: 100%">{{tenpoinfo.address}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="bottom-icons">
+            <div class="bottom-icons-renkei">
+                <img class="bottom-icons-renkei-img" touch-botton="img/map/map_renkeiBtnDisable_390x260.png" on-touch-end="img/map/map_renkeiBtn_390x260.png" single-click="shareNaviSheet();
+                     send(tenpoinfo)" src="img/map/map_renkeiBtn_390x260.png" />
+            </div>
+
+            <div class="bottom-icons-denwa">
+                <img class="bottom-icons-denwa-img" touch-botton="img/map/map_denwaBtnDisable_390x260.png" on-touch-end="img/map/map_denwaBtn_390x260.png" single-click="telSheet();
+                     send(tenpoinfo)" src="img/map/map_denwaBtn_390x260.png" ng-show="isIpad === false"/>
+                <img class="bottom-icons-denwa-img" src="img/map/map_denwaBtnDisable_390x260.png" ng-show="isIpad === true"/>
+            </div>
+
+            <div class="bottom-icons-enkai">
+                <img class="bottom-icons-enkai-img" touch-botton="img/map/map_enkaiBtnDisable_390x260.png" on-touch-end="img/map/map_enkaiBtn_390x260.png" single-click="partySheet();
+                     send(tenpoinfo)" src="img/map/map_enkaiBtn_390x260.png"/>
+            </div>
+        </div>
+
+    </ons-dialog> 
+</ons-page>

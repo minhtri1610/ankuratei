@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page ng-controller="howtoCtrl" id="howto" ng-device-backbutton="onDeviceBackButton($event)">
+    <ons-toolbar fixed-style class="howtoTitle" ng-style="{{::iosStyle}}">
+        <div class="center" ng-style="{{::iosCenterStyle}}">アプリの使い方</div>
+        <div class="right" ng-style="{{::iosRightStyle}}">
+            <div class="close-btn" single-click="pageClose();">
+                <ons-toolbar-button class="menu-close">
+                    <ons-icon icon="ion-android-close"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-scroller>
+            <ons-list id="top">
+                <ons-list-item class="howtoListItem">
+                    <h3>お店を探す</h3>
+                    <hr>
+                    <h5>現在地から探す</h5>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img01.png">
+                    </div>
+                    <div class="comment">
+                        <p>画面上部の「現在地」をタップすると、現在地を中心に周辺の地図が表示されます(お使いの機器の位置情報サービスをオンにしておく必要があります)。近くにお店があるときにはお店を示すマークが表示されます。</p>
+                    </div>
+                    <hr>
+                    <h5>検索する</h5>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img02.png">
+                    </div>
+                    <div class="comment">
+                        <p>地図画面上部の入力欄に、地名や店舗名を入力することで、店舗を検索することができます。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>お店の情報をみる</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img03.png">
+                    </div>
+                    <div class="comment">
+                        <p>地図画面の店舗マークをタップすると詳細情報がご覧いただけます。サービス内容、営業時間、客席数、駐車場、電話番号、住所、店長メッセージが表示されます。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>経路案内をする</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img04.png">
+                    </div>
+                    <div class="comment">
+                        <p>お店の情報画面から、「連携アプリを使う」→「経路案内」の順にタップすると現在地から店舗までの経路案内をすることができます。※iOSの場合、地図アプリにApple MapsかGoogle Mapsかを選ぶことができます。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>カーナビと連携する</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img05.png">
+                    </div>
+                    <div class="comment">
+                        <p>お店の情報画面から、「連携アプリを使う」→「カーナビ連携（NaviCon）」の順にタップすると、デンソーのアプリ「NaviCon」が起動して、カーナビにお店の位置情報を送ることができます。※デンソーのアプリ「NaviCon」のインストールが必要です。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>お店に電話する</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img06.png">
+                    </div>
+                    <div class="comment">
+                        <p>お店の情報画面から、「お店に電話する」→「(お店の電話番号)に電話する」の順にタップすると、お店に電話することができます。※宴会のご予約も直接申し込むことができます。ご予約申込内容の変更やキャンセルにつきましては、営業時間をご確認の上、直接お店までお電話でご連絡ください。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>宴会の予約をする</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img07.png">
+                    </div>
+                    <div class="comment">
+                        <p>お店の情報画面から、「宴会のご予約」→「ご予約フォームから予約する」の順にタップすると、宴会予約フォームが表示されます。申込内容を入力して送信していただいた後、お店からお客様に折り返しお電話いたします。申し込み内容のご確認と打ち合わせを行い、予約の成立となります。※送信時点では予約の成立とはなりませんのでご注意ください。ご予約申込内容の変更やキャンセルにつきましては、営業時間をご確認の上、直接お店までお電話でご連絡ください。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>お得なクーポンを使う</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img08.png">
+                    </div>
+                    <!-- 短縮版 -->
+                    <div class="comment" ng-hide="isDetail">
+                        <p>画面下に並んでいるボタンの「お得なクーポン」をタップすると、クーポン画面が表示されます。ご利用になりたいクーポンを表示した状態で、ご注文の際に店員にお見せください。
+
+                            ※ご利用は、チラシ、安楽亭ホームページのクーポンをプリントアウトしていただいたもの、本アプリのクーポン画面、その他当社提供クーポン含めて、1回のご来店でお一人様２枚までとなります。
+
+                            ※詳細はクーポン画面上部の「ご利用条件」をタップすると確認できます。</p>
+                    </div>
+                    <!-- 全文 -->
+                    <div class="comment" ng-show="isDetail">
+                        <p>画面下に並んでいるボタンの「お得なクーポン」をタップすると、クーポン画面が表示されます。ご利用になりたいクーポンを表示した状態で、ご注文の際に店員にお見せください。
+
+                            ※ご利用は、チラシ、安楽亭ホームページのクーポンをプリントアウトしていただいたもの、本アプリのクーポン画面、その他当社提供クーポン含めて、1回のご来店でお一人様２枚までとなります。
+
+                            ※詳細はクーポン画面上部の「ご利用条件」をタップすると確認できます。
+
+
+                            ※クーポン券は焼肉レストラン安楽亭の店舗で有効です。
+                            ※クーポン券１枚で表記のメニューが表記価格にて１品ご飲食できます｡　
+                            ※一部メニューが異なるために、ご利用いただけないクーポン券がございます。ご利用いただけるクーポン券については、ご利用の各店舗へお問い合わせ下さい。
+                            ※生ビール、サワー・カクテル、ソフトドリンク割引券のみでのご飲食はご遠慮ください｡
+                            ※生ビール割引券、サワー・カクテル割引券は２０歳以上のお客様に限らせていただきます。
+                            ※他の割引券、サービス券との併用はできません。
+                            ※プリントアウトはカラー・白黒およびプリンター機種を問いません。
+                            ※プリントアウトの際は原寸のまま出力をお願いいたします。
+                            ※有効期限の無いもの、有効期限切れのものは、無効とさせて頂きます。</p>
+                    </div>
+                    <!-- 折りたたみリンク -->
+                    <div class="right-block" single-click="showDetail()" ng-hide="isDetail">･･･つづきを読む</div>
+                    <div class="right-block" single-click="hideDetail()" ng-show="isDetail">閉じる</div>
+                    <div class="clr-block"></div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>クーポンをブックマークする</h3>
+                    <hr>
+                    <h5>ブックマークの登録／解除</h5>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img09.png">
+                    </div>
+                    <div class="comment">
+                        <p>クーポンをタップ もしくは 「★」ボタンをタップすることで、対象クーポンをブックマークに登録／解除することができます。</p>
+                    </div>
+                    <hr>
+                    <h5>ブックマークしたクーポンの表示</h5>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img10.png">
+                    </div>
+                    <div class="comment">
+                        <p>ブックマークしたクーポンが１件以上あるときには、「＜★」「★＞」ボタンをタップすることで、ブックマークしたクーポンのみを切換え表示できます。</p>
+                    </div>
+                </ons-list-item>
+                <ons-list-item class="howtoListItem">
+                    <h3>安楽亭オリジナル壁紙を<br>ダウンロードする</h3>
+                    <div class="img">
+                        <img src="img/manual/manual_Large_img11.png">
+                    </div>
+                    <div class="comment">
+                        <p>画面下に並んでいるボタンの「スペシャル」をタップすることで、壁紙ダウンロード画面が表示されます。壁紙の中からお好きなものを選択（画面中央に表示）して「壁紙を保存する」ボタンをタップすると、選択した壁紙をダウンロードすることが出来ます。</p>
+                    </div>
+                    <div style="height: 60px;"></div>
+                </ons-list-item>
+            </ons-list>
+        </ons-scroller>
+    </div>
+
+</ons-page>

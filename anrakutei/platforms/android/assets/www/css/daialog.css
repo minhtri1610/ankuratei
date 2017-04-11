@@ -1,0 +1,233 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/03/25, 17:00:00
+    Author     : kyo
+*/
+
+.alert-dialog {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 270px;
+    margin: auto auto;
+    background-color: #ffff;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px 0 0 0;
+    max-width: 95%;
+    color: #1f1f21;
+}
+.alert-dialog-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0px 8px 0px 8px;
+    text-align: center;
+    color: #1f1f21;
+}
+.alert-dialog-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 4px 12px 8px 12px;
+    font-size: 14px;
+    min-height: 36px;
+    text-align: center;
+    color: #1f1f21;
+}
+.alert-dialog-footer {
+    width: 100%;
+}
+.alert-dialog-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    letter-spacing: 0;
+    vertical-align: middle;
+    border: none;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    padding: 0 8px;
+    margin: 0;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    outline: none;
+    color: rgba(24,103,194,0.81);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button {
+        border-top: none;
+        -webkit-background-size: 100% 1px;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-image: -webkit-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: -moz-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: -o-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
+    }
+}
+.alert-dialog-button:active {
+    background-color: rgba(0,0,0,0.05);
+}
+.alert-dialog-button--primal {
+    font-weight: 500;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    font-size: 18px;
+    color: #0055ff;
+}
+.alert-dialog-footer--one {
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.alert-dialog-button--one {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 100%;
+    border-left: 1px solid #ddd;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button--one {
+        border-top: none;
+        border-left: none;
+        -webkit-background-size: 100% 1px, 1px 100%;
+        background-size: 100% 1px, 1px 100%;
+        background-repeat: no-repeat;
+        background-position: top, left;
+        background-image: -webkit-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -webkit-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -moz-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -moz-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -o-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -o-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%), linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+    }
+}
+.alert-dialog-button--one:first-child {
+    border-left: none;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button--one:first-child {
+        border-top: none;
+        -webkit-background-size: 100% 1px;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-position: top, left;
+        background-image: -webkit-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -moz-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -o-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+    }
+}
+.alert-dialog-mask {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.alert-dialog-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 14px 12px 8px 12px;
+    font-size: 14px;
+    text-align: center;
+    color: #a3a3a3;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Let's check whether you have Geolocation feature or not</title>
+<script type="text/javascript">
+function $(id){
+    return document.getElementById(id);
+}
+
+options = {
+	enableHighAccuracy: true
+};
+
+window.onload = function() {
+    var hasGeolocation = !!navigator.geolocation;
+    if (hasGeolocation) {
+        $("found_or_not").innerHTML = "Found Geolocation Feature!"
+        navigator.geolocation.getCurrentPosition(function(location) {
+                                                     $("lat_long").innerHTML = "lat: " + location.coords.latitude + ", lon: " + location.coords.longitude;
+                                                 },handleError,options);
+
+    } else {
+        $("found_or_not").innerHTML = "Not Found Geolocation Feature!"
+    }
+}
+
+function handleError(a) {
+ var d = document.getElementById("d");
+ d.innerHTML = "error:" + a.code + "</br>";
+}
+
+</script>
+</head>
+<body>
+<p id="found_or_not"></p>
+<p id="lat_long"></p>
+</body>
+</html>

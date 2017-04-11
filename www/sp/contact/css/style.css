@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body{
+	font-family : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Verdana, Arial, sans-serif;
+	color : #555555;
+	font-size : 80%;
+	line-height : 1.8;
+	/*background : url(../image/bg-body.jpg) repeat 0 0;*/
+  background-color: #F6F3EC;
+}
+a:link,
+a:visited{
+	color : #0000ff;
+	text-decoration : underline;
+}
+a:hover,
+a:active{
+	color : #0000ff;
+	text-decoration : none;
+}

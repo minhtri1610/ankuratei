@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="sp2App">
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' * data:">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes">
+        <!--<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+
+        <link rel="stylesheet" href="lib/css/onsenui.css">
+        <link rel="stylesheet" href="lib/css/onsen-css-components-blue-basic-theme.css">
+        <link rel="stylesheet" href="css/sliding_menu.css">
+        <link rel="stylesheet" href="css/search-box.css">
+        <link rel="stylesheet" href="css/discount-coupons.css">
+        <link rel="stylesheet" href="css/map.css">
+        <link rel="stylesheet" href="css/search-result.css">
+        <link rel="stylesheet" href="css/result-detail.css">
+        <link rel="stylesheet" href="css/renkei.css">
+        <link rel="stylesheet" href="css/info.css">
+        <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="css/howto.css">
+        <link rel="stylesheet" href="css/setting.css">
+        <link rel="stylesheet" href="css/special.css">
+
+        <script type="text/javascript" src="cordova.js" defer></script>
+        <script src="lib/js/angular/angular.min.js" defer></script>
+        <script src="lib/js/angular/angular-sanitize.js" defer></script>
+        <script src="lib/js/angular/angular-touch.js" defer></script>
+        <script src="lib/js/onsenui.min.js" defer></script>
+        <script src="lib/js/jquery-1.11.3.min.js" defer></script>
+        <script src="lib/js/jquery-css-transform.js" defer></script>
+        <script src="lib/js/animsition.js" defer></script>
+        <script src="js/root.js" defer></script>
+        <script src="js/discount-coupons.js" defer></script>
+        <script src="js/use-conditions.js" defer></script>
+        <script src="js/tenpo.js" defer></script>
+        <script src="js/info.js" defer></script>
+        <script src="js/howto.js" defer></script>
+        <script src="js/setting.js" defer></script>
+        <script src="js/special.js" defer></script>
+
+    </head>
+    <body class="appbody">
+        <div ng-controller="RootCtrl" id="root">
+
+            <!-- スライドメニュー -->
+            <ons-navigator var="myNavigator">
+                <ons-sliding-menu var="menu" menu-page="menu.html" main-page="tabbar.html" side="left" type="push" max-slide-distance="270px">
+                </ons-sliding-menu>
+            </ons-navigator>
+
+            <!-- タブバー -->
+            <ons-template id="tabbar.html">
+                <ons-tabbar ng-controller="TabbarCtrl" id="tab" var="tabbar">
+                    <ons-tab no-reload persistent class="tab" page="notice.html" ng-click="infoClick()" active="true">
+                        <img ng-show="tabbar.getActiveTabIndex() == 0" src="img/menu/menu_Icon_5_infoAct_288x162.png">
+                        <img ng-show="tabbar.getActiveTabIndex() != 0" src="img/menu/menu_Icon_5_info_288x162.png">
+                        <span class="notification reply-notification" ng-show="badge > 0">{{badge}}</span>
+                    </ons-tab>
+                    <ons-tab no-reload persistent class="tab" ng-click="infoTenpo()" page="tenpo.html">
+                        <img ng-show="tabbar.getActiveTabIndex() == 1" src="img/menu/menu_Icon_2_mapAct_288x162.png">
+                        <img ng-show="tabbar.getActiveTabIndex() != 1" src="img/menu/menu_Icon_2_map_288x162.png">
+                    </ons-tab>
+                    <ons-tab no-reload persistent class="tab" page="discount-coupons.html" ng-click="infoCoupon()">
+                        <img ng-show="tabbar.getActiveTabIndex() == 2" src="img/menu/menu_Icon_3_couponAct_288x162.png">
+                        <img ng-show="tabbar.getActiveTabIndex() != 2" src="img/menu/menu_Icon_3_coupon_288x162.png">
+                    </ons-tab>
+                    <ons-tab no-reload persistent class="tab" ng-click="infoWallpaper()" page="special.html">
+                        <img ng-show="tabbar.getActiveTabIndex() == 3" src="img/menu/menu_Icon_4_specialAct_288x162.png">
+                        <img ng-show="tabbar.getActiveTabIndex() != 3" src="img/menu/menu_Icon_4_special_288x162.png">
+                    </ons-tab>
+                </ons-tabbar>
+            </ons-template>
+        </div>
+    </body>
+</html>

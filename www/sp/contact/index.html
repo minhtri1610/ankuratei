@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>安楽亭（お問い合わせページ）</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="../css/top2011.css" />
+<link rel="stylesheet" href="../css/common2011.css" />
+<link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/import.css" />
+<link rel="stylesheet" type="text/css" href="css/mailform.css" />
+<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+
+<script type="application/javascript">
+<!--//
+
+var listidx = 51;
+
+//-->
+</script>
+<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="js/jp-holidays.js"></script>
+<script type="text/javascript" src="js/suggest.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/top.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+<!-- 住所自動入力ライブラリ ここから -->
+<script type="text/javascript" src="js/ajaxzip3.js"></script>
+<!-- 住所自動入力ライブラリ ここまで -->
+
+<!-- jQuery ui Datepicker ここから -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
+<script>
+$(function() {
+	$("#datepicker").datepicker({
+		maxDate: '0d',
+		dateFormat: 'yy/mm/dd', 
+		beforeShowDay: function(date){
+			var weeks = date.getDay();
+			var hol_name = "";
+			if(date.isJpHoliday()) {
+				hol_name = date.jp_hol_name;
+				weeks = 7;
+			}
+			if (weeks == 7)
+				return [true, 'holiday', hol_name];
+			else if (weeks == 0)
+				return [true,'sunday'];
+			else if (weeks == 6)
+				return [true, 'saturday'];
+			return [true, 'weekday'];
+		}
+	});
+//	$("#datepicker").datepicker("option", "showOn", 'button');
+	$("#datepicker").datepicker("option", "showOn", 'both');
+	$("#datepicker").datepicker("option", "buttonImageOnly", true);
+	$("#datepicker").datepicker("option", "buttonImage", 'img/ico_calendar.png');
+});
+</script>
+<!-- jQuery ui Datepicker ここまで -->
+</head>
+
+<body style="background-color: rgb(255,255,255);">
+
+<!-- contentsWrap  -->
+<div id="contentsWrap">
+
+<header id="topPageHeader" style='color:#666666; background-color: rgb(255,255,255); width: 90%;max-width: 550px;'>
+<h1 style="width: 50%; text-align: center;">
+	<a href="https://k.anrakutei.jp/sp/index.html"><img src="../images/logo.jpg" alt="トップページへ" width="60" height="34"></a>
+</h1>
+<p class="menuBtn" style="width: auto">
+	<a style="margin: 9px auto 7px auto;" href="javascript:void(0)" onclick="slideUpMenu();">メニュー一覧</a>
+</p>
+</header>
+
+<div class="page-title1">お客様の声</div>
+
+<form id="upload-form" name="USER_VOICE" action="goiken_check.php" method="post">
+	
+	<div class="page-title2">
+		店舗に関するご意見・ご要望
+	</div>
+	
+	<hr class="titil_underline">
+	
+	<dl>
+		<dt>ご来店日時</dt>
+		<dd>
+			<input type="text" id="datepicker" name="txtDate" readonly="readonly">
+			&nbsp;&nbsp;
+			<select name="txtTime" id="hour">
+				<option value="">--</option>
+				<option value="7">07</option>
+				<option value="8">08</option>
+				<option value="9">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="0">00</option>
+				<option value="1">01</option>
+				<option value="2">02</option>
+				<option value="3">03</option>
+				<option value="4">04</option>
+				<option value="5">05</option>
+				<option value="6">06</option>
+			</select>
+			<label style="font-size: initial;">時頃</label>
+		</dd>
+		<dt>人数</dt>
+		<dd>
+			<select id="txtCount" name="txtCount">
+				<option value="">--人数--</option>
+				<option value="1人">1人</option>
+				<option value="2人">2人</option>
+				<option value="3人">3人</option>
+				<option value="4人">4人</option>
+				<option value="5人">5人</option>
+				<option value="6人">6人</option>
+				<option value="7人">7人</option>
+				<option value="8人">8人</option>
+				<option value="9人">9人</option>
+				<option value="10人以上">10人以上</option>
+			</select>
+		</dd>
+		<dt>ご利用店舗名</dt>
+		<dd class="required">
+			<section class="accordion_dl">
+				<div class="active">
+				キーワードで探す
+				</div>
+				<ul class="search-area">
+					<div class="comment2">
+						店舗名、住所の一部を入力して頂きますと、候補が表示されます
+					</div>
+					<input id="keywordTenpo" name="txtTenpo1" type="text" size="50" maxlengh="50"/>
+					<div id="suggest" style="display:none;"></div>
+				</ul>
+				<div>
+					地図から探す
+				</div>
+				<ul class="search-area">
+					<div class="comment2">
+						>現在地から探す
+					</div>
+					<div>
+						<input name="btnMap" class="open_map_button" type="button" value="現在地周辺" onClick="funcMapOpen(550, 0)"/>
+					</div>
+					<div class="comment2" style="margin-top: 10px;">
+						>選択地域から探す
+					</div>
+					<div>
+						<select id="product" name="product"><!--onChange="funcMapOpen(550, this.value)"-->
+							<option value="">--地域を選択--</option>
+							<option value="1">埼玉県</option>
+							<option value="5">千葉県</option>
+							<option value="3">栃木県</option>
+							<option value="4">群馬県</option>
+							<option value="2">茨城県</option>
+							<option value="6">東京都</option>
+							<option value="8">静岡県</option>
+							<option value="7">神奈川県</option>
+						</select>
+						<input name="btnMap" class="seleted_area" type="button" value="検索" onClick="selectArea()"/>
+					</div>
+				</ul>
+				<div>
+					ブランドから探す
+				</div>
+				<ul class="search-area">
+					<div class="select-item">1.
+						<select id="brand" name="sltBrand" onChange="funcChangeBrand(this)">
+							<option value="brand">--ブランド--</option>
+						</select>
+	  			</div>
+					<div class="select-item">2.
+					  <select id="ken" onChange="funcChangeAddr1(this)">
+							<option value="ken">--都道府県--</option>
+					  </select>
+					</div >
+					<div class="select-item">3.
+					  <select id="shiku" onChange="funcChangeAddr2(this)">
+							<option value="shiku">--市区町村--</option>
+					  </select>
+					</div>
+					<div>4.
+					  <select name="tenpo" id="tenpo" onChange="funChangeTenpo(this)">
+					  	<option value="tenpo">--ご利用店舗名--</option>
+					  </select>
+					</div>
+				</ul>
+			</section>
+			<Hr Size="1">
+			<div>
+				<input type="text" class="decisionName" id="decisionName" value="" placeholder="店舗名が決定されていません" readonly="readonly"/>
+			</div>
+		</dd>
+
+		<dt>ご意見・ご要望記入欄</dt>
+		<dd class="required">
+			<textarea id="comments" name="txtIken" cols="40" rows="5"></textarea>
+			<div>
+				<div class="comment2" style="margin-top: 4px;">
+					画像を添付することができます<br>※最大4枚まで
+				</div>
+				<div style='margin: 4px 0;'>
+					<input type="file" name="photo1" id="photo" accept="image/jpeg, image/gif, image/png"/>
+					<input type="button" id="select-photo" value="画像を添付する"/>
+				</div>
+				<hr>
+				<div class="img-comment">
+					※画像を削除する場合は、該当する画像をクリックしてください。
+				</div>
+				<div id="upImg" style='margin:4px;'></div>
+			</div>
+			<div id="_preview" style='margin:4px;'></div>
+		</dd>
+
+		<dt>お名前</dt>
+		<dd>
+			<input type="text" id="name_3" name="txtName" value="" placeholder="氏名をご入力ください" />
+		</dd>
+
+		<dt>性別</dt>
+		<dd>
+			<ul>
+				<li>
+					<div class="custom01">
+						<input type="radio" id="gender_1" name="rdoSex" value="男性" /><label for="gender_1">男性</label>
+						<input type="radio" id="gender_2" name="rdoSex" value="女性" /><label for="gender_2">女性</label>
+					</div>
+				</li>
+			</ul>
+		</dd>
+
+		<dt>年齢</dt>
+		<dd>
+			<select id="product" name="sltAge">
+				<option value="" selected>--年齢--</option>
+				<option value="10歳未満">10歳未満</option>
+				<option value="10代前半">10代前半</option>
+				<option value="10代後半">10代後半</option>
+				<option value="20代前半">20代前半</option>
+				<option value="20代後半">20代後半</option>
+				<option value="30代前半">30代前半</option>
+				<option value="30代後半">30代後半</option>
+				<option value="40代前半">40代前半</option>
+				<option value="40代後半">40代後半</option>
+				<option value="50代前半">50代前半</option>
+				<option value="50代後半">50代後半</option>
+				<option value="60代前半">60代前半</option>
+				<option value="60代後半">60代後半</option>
+				<option value="70歳以上">70歳以上</option>
+			</select>
+		</dd>
+
+		<dt>郵便番号</dt>
+		<dd>
+			<input type="tel" id="postal" name="txtZip" placeholder="3380001" onkeyup="AjaxZip3.zip2addr(this,'','txtAddr1','txtAddr1');" />
+			<div class="comment">郵便番号を入力すると、住所が自動入力されます</div>
+		</dd>
+
+		<dt>住所</dt>
+		<dd>
+			<input type="text" id="address_1" name="txtAddr1" placeholder="都道府県・市区郡町村" />
+			<input type="text" id="address_2" name="txtAddr2" placeholder="○丁目○番地○号" />
+			<input type="text" id="address_3" name="txtAddr3" placeholder="ビル名・マンション名" />
+		</dd>
+
+		<dt>電話番号</dt>
+		<dd>
+			<input type="tel" id="phone" name="txtTel" placeholder="0120298957"/>
+		</dd>
+
+		<dt>
+			<span class="optional">任意</span>メールアドレス
+		</dt>
+		<dd>
+			<div>
+				<input type="email" id="mail_address" name="txtMail" placeholder="sample@example.com" />
+			</div>
+			<div>確認のためもう一度入力してください</div>
+			<div>
+				<input type="email" id="mail_address_confirm" name="txtMail1" />
+			</div>
+		</dd>
+	</dl>
+	<div id="send_button">
+		<input type="button" class="btnCheck" name="btnSendMail" value="確認画面へ" onclick="funcSendMail()" />&nbsp;&nbsp;
+		<input type="reset"  class="btnCheck"                    value="リセット"   onclick="return funcResetAll()" />
+	</div>
+	<input type="hidden" name="hidBrand">
+	<input type="hidden" name="hidAddr1">
+	<input type="hidden" name="hidAddr2">
+	<input type="hidden" name="hidTenpo">
+	<input type="hidden" name="hidTenpoCd">
+	<input type="hidden" name="hidDay" value="--">
+	<input type="hidden" name="hidImages" value="--">
+	<input type="hidden" name="txtType">
+	
+<!--【2016/07/13 企画部要望により、削除】
+	<div class="freedial">
+		(株)安楽亭　お客様相談室<br>
+		フリーダイヤル　０１２０−２９８−９５７ <br>
+		受付時間　９:００～１８:００
+	</div>
+-->
+	
+	<div class="info-box">
+		<div class="info-title">【個人情報の取り扱いについて】</div>
+		<div class="info-body">
+			1. 個人情報の収集・利用の目的<BR>
+			　 お問い合わせ・ご意見・ご要望における個人情報の収集は、本サービスの充実や円滑な運営を目的とし、その目的の達成に必要な範囲内で行うものとします。<BR><BR>
+			2. 個人情報の利用制限<BR>
+			　 個人情報は、目的の範囲内で利用いたします。<BR>
+			　 また、お客様の同意なく目的の範囲を超えて利用することはいたしません。<BR><BR>
+			3. 第三者への非開示の原則<BR>
+			　お客様の個人情報は次の場合を除き、第三者へは提供いたしません。<BR>
+			　（1）お客様の同意がある場合<BR>
+			　（2）その他法令等に基づく正当な理由がある場合。
+		</div>
+	</div>
+	
+</form>
+
+<!-- ここからボタン -->
+<p id="pageTop">
+	<a href="#">
+		<i class="ion-ios-arrow-up"></i>
+	</a>
+</p>
+<!-- ここまでボタン -->
+
+<!-- topPageFooter -->
+<footer id="topPageFooter">
+	<p class="copyright_contact">&copy;Anrakutei Co.,Ltd.</p>
+</footer>
+
+</div>
+<!-- //contents -->
+
+<!-- menu -->
+<nav id="menu">
+</nav>
+<script src="../js/menu.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page modifier="menu" ng-controller="SlidingMenuCtrl" id="menu" animation="slide">
+    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+        <div class="center" ng-style="{{::iosCenterStyle}}">アプリメニュー</div>
+    </ons-toolbar>
+
+    <ons-list class="menu-list" style="vertical-align: top;">
+
+        <!-- tri -->
+       
+            <ons-list-item class="menu-login" >
+                <div class="avatar">
+                    <img src="img/slide/slide_icon_okyakusama_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+                </div>
+                <div class="nick_name">
+                    Username:
+                </div>
+                <div class="id_user">
+                    ID:
+                </div>
+                <div class="btn-action">
+                    <button class="btn-login" ng-click="direct_login()">
+                        lOGIN
+                    </button>                  
+                </div>                
+            </ons-list-item>
+        <!-- end code tri -->
+        <ons-list-item class="menu-item" single-click="direct()">
+            <img src="img/slide/slide_icon_homepage_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+            安楽亭ホームページ
+        </ons-list-item>
+        <ons-list-item class="menu-item-customer">
+            <div single-click="toggleContact()">
+                <img src="img/slide/slide_icon_okyakusama_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+                お客様の声
+            </div>
+            <ul>
+                <div class="tenpo-focus" single-click="directContact(1)">
+                    <img src="img/slide/slide_icon_tenpo_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+                    店舗に関するご意見・ご要望
+                </div>
+                <div class="other-focus" single-click="directContact(0)">
+                    <img src="img/slide/slide_icon_others_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+                    その他のお問い合わせ
+                </div>
+            </ul>
+        </ons-list-item>
+        <ons-list-item class="menu-item" hello="world" single-click="toUseMethod()">
+            <img src="img/slide/slide_icon_info_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+            アプリの使い方
+        </ons-list-item>
+        <ons-list-item class="menu-item" single-click="toSet()">
+            <img src="img/slide/slide_icon_setting_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+            アプリ設定
+        </ons-list-item>
+    </ons-list>
+</ons-page>

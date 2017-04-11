@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <script type="text/javascript" src="gears_init.js"></script>
+  <script type="text/javascript">
+  <!--
+
+  //モバイル端末の判定
+  var mobile = "";
+  var agent = navigator.userAgent;
+  if( agent.search(/iPhone/) != -1 ){
+      mobile = "iPhone";
+  }else if( agent.search(/Android/) != -1 ){
+      mobile = "Android";
+  }
+
+  //緯度経度取得
+  var gps;
+  function getGPS(){
+      if( mobile == "iPhone" ){
+          gps = navigator.geolocation;
+      }else if( mobile == "Android" ){
+          gps = google.gears.factory.create('beta.geolocation');
+      }
+      gps.getCurrentPosition(updatePosition, handleError);
+  }
+
+  //緯度経度の表示
+  function updatePosition(position) {
+      if( mobile == "iPhone" ){
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+      }else if( mobile == "Android" ){
+          var lat = position.latitude;
+          var lon = position.longitude;
+      }
+      alert('Current lat/lon is: ' + lat + ',' + lon );
+  }
+
+  //エラー処理
+  function handleError(positionError) {
+    alert('Attempt to get location failed: ' + positionError.message);
+  }
+  -->
+  </script>
+<body>
+<center>
+<input type="submit" value="緯度経度取得" onClick="getGPS()" >
+</center>
+</body>
+</html>

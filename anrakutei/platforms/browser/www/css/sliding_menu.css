@@ -1,0 +1,91 @@
+
+.page--menu__background {
+    background-color: #f6f3ec;
+    color: black;
+}
+
+.menu-item {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #595450;
+    line-height: 44px;
+    height: 44px;
+}
+
+.menu-item-customer {
+    font-weight: bold;
+    color: #595450;
+}
+
+.menu-item-customer > div {
+    color: #595450;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-item-customer > div:before {
+    display: block;
+    content: "";
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 50%;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    margin-top: -8px;
+    background: #868080;
+}
+
+.menu-item-customer > div:after {
+    display: block;
+    content: "";
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 50%;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    margin-top: -13px;
+    background: #ffffff;
+}
+
+.menu-item-customer > div.active {
+    border-bottom: 1px solid #b6b1b6;
+}
+
+.menu-item-customer > div.active:before {
+    margin-top: -2px;
+}
+
+.menu-item-customer > div.active:after {
+    margin-top: 3px;
+}
+
+.menu-item-customer > ul {
+    display: none;
+    margin: 2px;
+    padding-left: 5px;
+}
+
+.tenpo-focus {
+    font-size: 16px;
+    border-bottom: 1px solid #b6b1b6;
+}
+
+.other-focus {
+    font-size: 16px;
+}
+
+#map_area {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    margin-bottom: 49px;
+}
+
+.active > .tab-bar-inner > .my-icon {
+    background-color: #cccccc;
+    height: 32px;
+}

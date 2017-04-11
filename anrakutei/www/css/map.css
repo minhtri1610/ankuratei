@@ -1,0 +1,260 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015/07/27, 15:04:15
+    Author     : kyo
+*/
+
+#map_canvas { 
+    width:100%; 
+    height: 100%;
+    z-index: -1;
+}
+
+.par-message {
+    position: absolute; 
+    text-align: center;
+    background-color: #8e8e8e;
+    font-size: 14px;
+    left: 15%;
+    width:70%;
+    color: #ffffff;
+    top:45px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    -webkit-border-radius:2px;
+}
+
+.gm-style-iw + div {
+    display: none;
+}
+
+.search-input-map{
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    margin: auto;
+}
+
+.par-search{
+    margin-top:10%
+}
+
+.par-buttons{
+    position: absolute; 
+    text-align: center; 
+    width:100%; 
+    bottom:-12px
+}
+
+.btn-delete{
+    z-index:1
+}
+
+.btn-distance{
+    z-index:1; margin-left: 5px;
+}
+
+/*for flicking*/
+.onsen-sliding-menu__menu,
+.onsen-sliding-menu__main {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0s cubic-bezier(0.1, 0.7, 0.1, 1) !important; 
+    transition: all 0s cubic-bezier(0.1, 0.7, 0.1, 1) !important;
+    -webkit-box-shadow: -1px 0px 4px 1px #B3B3B3;
+    box-shadow: -1px 0px 4px 1px #B3B3B3;
+}
+
+.ons-list-tenpo-item:first-child {
+    border-bottom: 1px solid #999 !important;
+}
+
+.tenpo-list--font{
+    font-weight: 600;
+    color: #000000;
+}
+
+.info-col-log {
+    margin-left: 4px;
+    height: 60px;
+    line-height: 1;
+    padding: 12px 0 12px 0;
+}
+
+.info-col-tenpo {
+    left: 10%;
+    margin-top: 1%;
+    height: 60px;
+    line-height: 12px;
+    padding: 15px;
+    position: relative;
+}
+
+.info-col {
+    height: 60px;
+    line-height: 1;
+    padding: 12px 0 12px 4px;
+}
+
+.info-num-type {
+    width: 208px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.info-unit-name {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bolder;
+    width: 208px;
+}
+
+.to-wrapper {
+    background-color: #ffffff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    height: 100%;
+}
+
+.to-image {
+    width: 11.7%;
+    height: 94%;
+    background: url(../img/map/map_icon_tenchou_156x280.png) 0 0 no-repeat transparent;
+    background-size: contain;
+    float: left;
+    background-position: center;
+    position: relative;
+}
+
+.info-comment-img {
+    background-color: #ffffff;
+    float:left;
+}
+
+.shopper-comment {
+    width: 80%;
+    float: left;
+    position: relative;
+    margin: 3%;
+    font-size: 14px;
+    height: 76%;
+    color: #000;
+    overflow-y: auto;
+    font-weight: 400;
+    background-color: transparent;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    line-height: 1.2;
+}
+
+.info-comment-img-style {
+    vertical-align: middle; 
+    font-size: 28px;
+    height: 100px;
+    float: left;
+}
+
+.info-comment-contents {
+    background-color: #ffffff;
+    color: #a65d29;
+    font-weight: bolder;
+    height: 110px;
+    overflow: auto;
+    float:left;
+}
+
+.info-get-label {
+    float: left;
+    color: #ffffff;
+    font-size: 14px;
+    position: relative;
+    left: 3%;
+}
+
+.info-get-contents {
+    color: #ffffff;
+    font-size: 14px;
+    overflow-y: scroll;
+}
+
+.info-unit {
+    margin-top: 6px;
+    font-size: 14px;
+    opacity: 0.4;
+}
+
+.info-num {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.info-unit {
+    margin-top: 6px;
+    font-size: 14px;
+    opacity: 0.4;
+}
+
+.searchebar {
+    opacity: 0.8; 
+    background-color: #ffffff;
+    height: 49px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+
+.now {
+    float: left;
+    height: 100%;
+    width:22%;
+    padding: 0px 6px;
+    text-align: center;
+    position: relative;
+}
+
+.search-input-area {
+    width: 70%;
+    float: left;
+    position: relative;
+    height: 100%;
+    padding-right: 2%;
+}
+
+.pop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.pop.ng-enter,
+.pop.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.pop.ng-enter {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.pop.ng-enter-active,
+.pop.ng-leave,
+.pop.ng-leave-active {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* ínê}âÊñ ÇÃÉXÉNÉçÅ[Éãó}é~ëŒâûÅiiOSÅj */
+._gmaps_cdv_ {
+    overflow: hidden;
+}

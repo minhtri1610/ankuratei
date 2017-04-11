@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page>
+    <ons-dialog var="dialog" ng-controller="GetSearchResultCtrl" ng-dialogheight>
+
+        <div class="search-result">
+            <div class="result-tenpo-icon">
+                <img src="img/tenpo/map_logo_254x146.png" class="result-tenpo-icon-img">
+            </div>
+            <div class="result-title" modifile="title">
+                <p class="result-title-text">検索結果</p>
+            </div>
+            <div class="close-result">
+                <img src="img/tenpo/map_closeBtn58.png" class="close-result-img" single-click="closeDialog()" ng-closebutton>
+            </div>
+        </div>
+
+        <ons-scroller class="sear-result-scroller">
+            <ons-list>
+                <ons-list-item ng-repeat="rt in result" modifier="tappable" single-click="onClose(rt)" class="ons-list-tenpo-item">
+                    {{rt.tenpotype}} {{rt.tenponame}}
+                </ons-list-item>
+            </ons-list>
+        </ons-scroller>
+
+    </ons-dialog> 
+</ons-page>

@@ -1,0 +1,180 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015/09/25, 2016/03/25 17:00:00
+    Author     : kyo
+*/
+
+.spaecial-space {
+    width: 100%;
+    height: 44px;
+}
+
+.special-carousel-area {
+    position: absolute;
+    width: 100%;
+    height: 83%;
+    overflow-y: hidden !IMPORTANT;
+    top:0;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.special-img-back-frame {
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin-right: 14%;
+}
+
+.carousel-back-frame {
+    z-index: 1;
+    left: 25%;
+    right: 25%;
+    width: auto;
+    height: 83%;
+    text-align: center;
+    position: absolute;
+    overflow-y: hidden !IMPORTANT;
+    overflow-x: hidden !IMPORTANT;
+    top: 0;
+}
+
+.carousel-back-frame
+.carousel-back-frame-img {
+    z-index: -1;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    width: 100%;
+    height: auto;
+}
+
+.special-frame {
+    background-size:contain;
+    vertical-align:middle;
+    margin-left: -14.4%;
+}
+
+.special-frame
+.special-frame-img {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate3d(0, -51%, 0);
+    transform: translate3d(0, -51%, 0);
+    height: auto;
+    width: 100%;
+}
+
+.special-prev {
+    height: 60%;
+}
+
+.special-prev
+.special-prev-left-img {
+    position: relative;
+    top: 50%;
+    float: left;
+    max-width: 11%;
+    height: auto;
+    display: block;
+    -webkit-transform: translate3d(0,-50%, 0);
+    transform: translate3d(0,-50%, 0);
+}
+
+.special-prev
+.special-prev-right-img {
+    position: relative;
+    top: 50%;
+    float: right;
+    max-width: 11%;
+    height: auto;
+    display: block;
+    -webkit-transform: translate3d(0,-50%, 0);
+    transform: translate3d(0,-50%, 0);
+}
+
+.special-download {
+    position: absolute;
+    text-align: center;
+    top: 84%;
+    width: 100%;
+}
+
+.special-download
+.special-download-img {
+    max-width: 50%;
+}
+
+.special-paging-area {
+    clear: both;
+    bottom: 0%;
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.special-paging-area
+.special-paging-space {
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.special-paging-area
+.navi-icnos-area {
+    height: 100%;
+    width: 60%;
+    float: left;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.special-paging-area
+.special-paging {
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.special-paging
+.special-paging-value {
+    -webkit-border-radius: 2px;
+    color: #f9f9f9;
+    width: 60%;
+    background-color: #87888f;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    -webkit-transform: translate3d(-50%,-50%, 0);
+    position: absolute;
+}
+
+.navi-icnos-area
+.special-paging-area-img {
+    max-width: 4%;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0,-50%, 0);
+    -webkit-transform: translate3d(0,-50%, 0);
+}
+
+.special-paging-area-img
+.navi-icon {
+    width: 9px;
+    vertical-align: middle;
+}

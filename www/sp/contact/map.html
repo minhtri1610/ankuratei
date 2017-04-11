@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--焼肉レストラン安楽亭｜安心・安全、美味しさ気軽に。安楽亭-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+    <head>
+        <title>安楽亭 店舗検索結果</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/search_tenpo.js"></script>
+        <link rel="stylesheet" href="./css/map.css" />
+    </head>
+    <body  text="#330000" BGCOLOR="#ffffff" alink="#0000ff" vlink="#0000ff">
+        <div class="select-area">
+            <select id="ken-select-box" onChange="funcChangeKen(this)">
+                <option value="current">現在地周辺</option>
+            </select>
+            <select id="shiku-select-box" onChange="funcChangeShiku(this)">
+                <option value="shiku-select-box">--市区町村--</option>
+            </select>
+          </div> 
+        <div id="map">
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSQHR6NveLrUraHQtY8rTpPTtSdk5E87Y&v=2&signed_in=false&callback=initMap" charset="utf-8"></script>
+        </div>
+    </body>
+</html>

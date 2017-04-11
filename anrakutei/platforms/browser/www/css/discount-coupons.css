@@ -1,0 +1,1170 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/03/25, 17:00:00
+    Author     : kyo
+*/
+
+.cimg {
+    height: 100%;
+    width: auto;
+    background-position: center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page--coupons{
+    background-color: #f5f5f5 !IMPORTANT;
+}
+
+.menu-icon {
+    width: auto; 
+    height: 100%;
+}
+
+.dialog {
+    height: 69.5%;
+}
+
+.alert-dialog {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 270px;
+    margin: auto auto;
+    background-color: rgba(255, 255, 255, 0.92);
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px 0 0 0;
+    max-width: 95%;
+    color: #1f1f21;
+}
+.alert-dialog-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0px 8px 0px 8px;
+    text-align: center;
+    color: #1f1f21;
+}
+.alert-dialog-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 4px 12px 8px 12px;
+    font-size: 14px;
+    min-height: 36px;
+    text-align: center;
+    color: #1f1f21;
+}
+.alert-dialog-footer {
+    width: 100%;
+}
+.alert-dialog-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 17px;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    letter-spacing: 0;
+    vertical-align: middle;
+    border: none;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    padding: 0 8px;
+    margin: 0;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    outline: none;
+    color: rgba(24,103,194,0.81);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button {
+        border-top: none;
+        -webkit-background-size: 100% 1px;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-image: -webkit-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: -moz-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: -o-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+        background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
+    }
+}
+.alert-dialog-button:active {
+    background-color: rgba(0,0,0,0.05);
+}
+.alert-dialog-button--primal {
+    font-weight: 500;
+}
+.alert-dialog-footer--one {
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.alert-dialog-button--one {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 100%;
+    border-left: 1px solid #ddd;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button--one {
+        border-top: none;
+        border-left: none;
+        -webkit-background-size: 100% 1px, 1px 100%;
+        background-size: 100% 1px, 1px 100%;
+        background-repeat: no-repeat;
+        background-position: top, left;
+        background-image: -webkit-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -webkit-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -moz-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -moz-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -o-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%), -o-linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+        background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%), linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+    }
+}
+.alert-dialog-button--one:first-child {
+    border-left: none;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .alert-dialog-button--one:first-child {
+        border-top: none;
+        -webkit-background-size: 100% 1px;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-position: top, left;
+        background-image: -webkit-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -moz-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: -o-linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+        background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+    }
+}
+.alert-dialog-mask {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+}
+
+/*-------------------------???p????-------------------------------*/
+.use-conditions {
+    background-color: #e6e0dc;
+    width: 100%;
+    height: 44px;
+}
+
+.use-conditions
+.use-conditions-contents {
+    font-size: 10px;
+    width: 74%;
+    height: auto;
+    float: left;
+    padding: 2% 1% 2% 2%;
+    top: 50%;
+    position: relative;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.use-conditions
+.use-conditions-button {
+    text-align: right;
+    width: 20%;
+    height: 70%;
+    background: url(../img/coupons/sizeNormal/coupon_goriyouBtn156x70.png) 0 0 no-repeat transparent;
+    background-size: contain;
+    float: left;
+    background-position: right;
+    top: 50%;
+    position: relative;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.use-conditions
+.use-conditions-button-img {
+    width: 100%;
+    height:auto;
+    margin-top: 5%;
+}
+
+.use-conditions-title {
+    padding-left: 4%;
+    padding-top: 4%;
+    padding-right: 4%;
+    width: 92%;
+    background-color: #a65d29;
+    border-bottom: none !important;
+    height: 11%;
+}
+
+.use-conditions-title
+.use-conditions-title-log {
+    max-width: 20%;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    position: relative;
+}
+
+.use-conditions-title-log
+.use-conditions-title-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.conditions-description {
+    clear: both;
+    margin: 4%;
+    background-color: #a65d29;
+    height: 77%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.conditions-description
+.conditions-description-contents {
+    display: block;
+    font-size: 16px;
+    color: #FFF;
+    line-height: 1.2;
+}
+
+.use-conditions-title
+.use-conditions-title-txt {
+    width: 65%;
+    height: 100%;
+    float: left;
+    position: relative;
+    display: table;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.use-conditions-title-txt
+.use-conditions-title-txt-content {
+    text-align: center;
+    color: #FFF;
+    padding-right: 10%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size:22px;
+}
+
+/* offline-contents Message*/
+.offline-contents {
+    border: solid 1px #ccc;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/*---------test------------------------*/
+.next-coupon-navi-backgroupd {
+    position: absolute;
+    right: 0px;
+    max-width: 11%;
+    width: 11%;
+    height: 60%;
+    display: block;
+    background-color: rgba(0,0,255,0);
+    clear: both;
+    z-index: 100;
+}
+
+.next-coupon-navi-backgroupd-img {
+    position: absolute;  
+    max-width: 100%;  
+    width: 100%;
+    top: 33%;
+    -webkit-transform: translateY(-33%);
+    z-index: 10000;
+}
+
+.prev-coupon-navi-backgroupd {
+    position: absolute;        
+    max-width: 11%;
+    width: 100%;
+    height: 60%;        
+    background-color: rgba(0,0,255,0);
+    left: 0px;
+
+}
+
+.carousel-area {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    overflow-y: hidden !IMPORTANT;
+    clear: both;
+    background-color: #f5f5f5;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.carousel-area
+.carousel-area-nazo-before {
+    margin-left: -70%;
+}
+
+.carousel-area
+.carousel-area-nazo-before
+.nazobefore-button {
+    height: 16%;
+    opacity: 0.5;
+    -webkit-border-radius: 19px;
+    width: 68%;
+    position: absolute;
+    bottom: 14%;
+    transform: translate(23%,-16%);
+    -webkit-transform: translate(23%, -16%);
+    z-index: 10;
+}
+
+.carousel-area-nazo-before
+.first-background {
+    height: 100%;
+    width: 100%;
+    position: relative !IMPORTANT;
+}
+
+.first-background
+.first-background-img {
+    background: url(../img/coupons/couponBg_nazo0_1104x728.png) 0 0 no-repeat rgba(0, 0, 0, 0);
+    background-size: 100% auto;
+    background-position: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.carousel-area
+.carousel-area-items-nazo-before {
+    background-size:100% 100%;
+    background-size:contain;
+    margin-left: -70%;
+}
+
+.carousel-area-items-nazo-before
+.spm-background-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.spm-background-div
+.spm-background {
+    background: url(../img/coupons/couponBg_normal_1104x728.png) 0 0 no-repeat rgba(0, 0, 0, 0);
+    background-size: 100% auto;
+    background-position: center;
+    width: 100%;
+    height: 100%; 
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    z-index: 1;
+}
+
+.spm-background
+.spm-image-cover {
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    z-index: 4;
+    top: 86%;
+    background-color: grey;
+    opacity: 0.7;
+    -webkit-transform: translate(1%,-56%);
+    margin: 4px;
+}
+
+.spm-background
+.spm-image {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+.carousel-area
+.carousel-area-items-nazo-after {
+    margin-left: -70%;
+}
+
+.carousel-area-items-nazo-after
+.after-spm-background-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.after-spm-background-div
+.after-spm-background {
+    background: url(../img/coupons/couponBg_normal_1104x728.png) 0 0 no-repeat rgba(0, 0, 0, 0);
+    background-size: 100% auto;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    z-index: 1;
+}
+
+.after-spm-background
+.after-spm-image {
+    clear: both;
+    position: relative;
+    padding: 12px 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+.carousel-area
+.carousel-area-whitespace {
+    margin-left: -70%;
+}
+
+.prev-coupon-navi-backgroupd
+.prev-coupon-navi-backgroupd-img {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translate3d(0,-50%,0);
+}
+
+.next-coupon-navi-backgroupd
+.next-coupon-navi-backgroupd-img {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translate3d(0,-50%,0);
+}
+
+.carousel-area
+.carousel-area-nazo-oshi {
+    margin-left: -70%;
+}
+
+.carousel-area-nazo-oshi
+.oshi-spm-background-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.oshi-spm-background-div
+.oshi-spm-background {
+    background: url(../img/coupons/couponBg_nazo2_1104x810.png) 0 0 no-repeat rgba(0, 0, 0, 0);
+    background-size: 100% auto;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 46.5%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+}
+
+.oshi-spm-background
+.oshi-spm-image {
+    clear: both;
+    position: relative;
+    padding: 12px 12px;
+    top: 53.8%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+.carousel-area
+.carousel-area-nazo-getsp {
+    margin-left: -70%;
+}
+
+.carousel-area-nazo-getsp
+.getsp-spm-background-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.getsp-spm-background-div
+.getsp-spm-background {
+    background:url(../img/coupons/couponBg_nazo1_1104x810.png) 0 0 no-repeat transparent;
+    background-size: 100% auto;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 46.5%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+}
+
+.getsp-spm-background
+.sp-spm-image {
+    clear: both;
+    position: relative;
+    padding: 12px 12px;
+    top: 53.8%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+.bookmark-paging-area {
+    clear: both;
+    bottom: 0%;
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    overflow: visible;
+}
+
+.bookmark-paging-area
+.bookmark-paging {
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.bookmark-paging
+.bookmark-paging-contents {
+    -webkit-border-radius: 2px;
+    color: #f9f9f9;
+    width: 60%;
+    background-color: #b35959;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
+}
+.bookmark-paging-area
+.bookmark-paging-area-img {
+    height: 100%;
+    width: 60%;
+    float: left;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.bookmark-paging-area-img
+.navi-icons-area {
+    max-width: 4%;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+}
+
+.bookmark-paging-area
+.coupong-paging {
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.coupong-paging 
+.coupong-paging-value {
+    background-color: #87888f;
+    left: 50%;
+    -webkit-border-radius: 2px;
+    color: #f9f9f9;
+    width: 60%;
+    text-align: center;
+    top: 50%;
+    position: absolute;
+    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
+}
+
+.navi-icons-area
+.navi-icons {
+    width: 9px;
+    vertical-align: middle;
+}
+
+.coupon-label {
+    margin-top: -10%;
+    text-align: center;
+    font-size: 16px;
+}
+.carousel-area-items-nazo-before
+.coupon-label-before {
+    margin-top: -10%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.carousel-area-items-nazo-after
+.coupon-label-after {
+    font-size: 16px;
+    margin-top: -10%;
+    text-align: center;
+}
+
+.coupon-backgroupd-navi {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    overflow: hidden !IMPORTANT;
+    clear: both;
+    z-index: 2;
+}
+
+.slider-label {
+    position:relative;
+    text-align: center;
+    font-size: 14px;
+    margin-top: -36%;
+}
+
+.slider-label-nazopon {
+    position:relative;
+    text-align: center; 
+    font-size: 14px; 
+    margin-top: -35%;
+}
+
+ons-carousel-item:nth-child(2) {
+    position: relative;
+}
+
+.item-label {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    line-height: 1;
+    font-size: 48px;
+    font-weight: bold;
+}
+.cover-label {
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: 10px;
+    color: white;
+}
+
+/*---------------------Nazopon---------------*/
+.coupon-title {
+    padding-left: 4%;
+    padding-top: 4%;
+    padding-right: 4%;
+    width: 92%;
+    background-color: #a65d29;
+    border-bottom: none !important;
+    height: 11%;
+}
+
+.coupon-title
+.coupon-col-log {
+    max-width: 20%;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    position: relative;
+}
+
+.coupon-col-log
+.coupon-col-log-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.coupon-title
+.coupon-col-tenpo {
+    white-space: nowrap;
+    width: 65%;
+    height: 100%;
+    float: left;
+    position: relative;
+    display: table;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.coupon-col-tenpo
+.coupon-num-type {
+    position: relative;
+    width: auto !important;
+    font-size: 12px;
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.2;
+}
+
+.coupon-col-tenpo
+.coupon-unit-name {
+    position: relative;
+    width: auto;
+    font-size: 16px;
+    color: #ffffff;
+    margin-left: 5%;
+    line-height: 1.2;
+}
+
+.coupon-col-tenpo
+.nazotitle1 {
+    margin: 0 0 0 5%;
+}
+
+.coupon-col-tenpo
+.nazotitle2 {
+    margin: 0 0 0 5%;
+}
+.coupon-title
+.coupon-col-x {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.coupon-col-x
+.coupon-col-x-img {
+    width: 80%;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    float: right;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.use-conditions-title
+.use-conditions-col-x {
+    width: 15%;
+    height: 100%;
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.use-conditions-col-x
+.use-conditions-col-x-img {
+    width: 80%;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    float: right;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.nazogif {
+    background-color: #a65d29;
+    padding: 4%;
+    height: 20%;
+    position: relative;
+}
+
+.nazogif
+.nazogif-img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.nazopon-description {
+    background-color: #a65d29;
+    height: 37%;
+    overflow-y: scroll;
+    margin: 0 4%;
+    position: relative;
+    /*margin: 6px 0px;*/
+}
+
+.nazopon-description
+.nazopon-description-contents {
+    font-size: 16px;
+    margin: auto;
+    color: #ffffff;
+}
+
+.nazopon-button {
+    background-color: #a65d29;
+    height: 19%;
+    position: relative;
+    padding: 1% 4% 0 4%;
+}
+
+.nazopon-space {
+    background-color: #a65d29;
+    height: 82px;
+    bottom: 0;
+}
+
+.nazopon-button
+.nazopon-button-img {
+    position: relative;
+    max-width: 50%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+}
+
+.disable-nazopon-button {
+    background-color: #a65d29;
+    height: 19%;
+    position: relative;
+    padding: 1% 4% 0 4%;
+}
+
+.disable-nazopon-button
+.disable-nazopon-button-img {
+    position: relative;
+    max-width: 50%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    opacity: 0.4;
+    filter:grayscale(1);
+    -webkit-filter:grayscale(1);
+}
+
+/*------------????|????A----------*/
+.nazopon-result {
+    height: 60%;
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.nazopon-result-bk-oshi {
+    background:url(../img/coupons/couponBg_nazo2_1104x810.png)0 0 no-repeat transparent;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.nazopon-result-bk-oshi
+.nazopon-img-oshi {
+    position: relative;
+    top: 54.5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.nazopon-result-bk-getsp {
+    background:url(../img/coupons/couponBg_nazo1_1104x810.png)0 0 no-repeat transparent;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.nazopon-result-bk-getsp
+.nazopon-img-getsp {
+    position: relative;
+    top: 54.5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.nazo-period {
+    position: relative;
+    text-align: center;
+    padding: 3% 2% 2% 2%;
+    color: #ffffff;
+}
+
+.nazo-comment {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/****????O*****/
+.bookmark-nazoBefor {
+    clear: both;
+    background:url(../img/coupons/sizeNormal/coupon_bookmarkbtn_Base0_640x172.png) 0 0 no-repeat transparent;
+    width: 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    display: table-cell; 
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.bookmark-nazoBefor
+.bookmark-center {
+    max-width: 37%;
+    display: inline-block;
+}
+
+.bookmark-center
+.bookmark-nazoBefor-navi-c {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bookmark-nazoBefor
+.bookmark-left {
+    float : left;
+    max-width: 31%;
+    display: inline-block;
+}
+
+.bookmark-left
+.bookmark-nazoBefor-navi-l {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bookmark-nazoBefor
+.bookmark-right {
+    float : right;
+    max-width: 31%;
+    display: inline-block;
+}
+
+.bookmark-right
+.bookmark-nazoBefor-navi-r {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bookmark-nazoBefor-mark {
+    width: 12%;
+    margin-top: -6%;
+    margin-left: 82%;
+    z-index: 200;
+    position: absolute;
+}
+
+.bookmark-nazoBefor-mark-nazo {
+    width: 12%;
+    margin-top: 1%;
+    margin-left: 82%;
+    z-index: 200;
+    position: absolute;
+}
+
+/****?????*****/
+.bookmark {
+    clear: both;
+    background:url(../img/coupons/sizeNormal/coupon_bookmarkbtn_Base1_640x172.png) 0 0 no-repeat transparent;
+    width: 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    display: table-cell; 
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.bookmark
+.bookmark-center {
+    max-width: 37%;
+    display: inline-block;
+}
+
+.bookmark-center
+.bookmark-nazoBefor-navi-c {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bookmark
+.bookmark-left {
+    float : left;
+    max-width: 31%;
+    display: inline-block;
+}
+
+.bookmark-left
+.bookmark-nazoBefor-navi-l {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.bookmark
+.bookmark-right {
+    float : right;
+    max-width: 31%;
+    display: inline-block;
+}
+
+.bookmark-right
+.bookmark-nazoBefor-navi-r {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.before-cover {
+    position: absolute;
+    top: 15%;
+}
+
+.bookmark-mark {
+    width: 12%;
+    margin-top: 1%;
+    margin-left: 86%;
+    z-index: 200;
+    position: absolute;
+}
+
+.after-cover {
+    position: absolute;
+    top: 15%;
+    z-index: 200;
+}
+
+.bookmark-mark-nazo {
+    width: 12%;
+    margin-top: 1%;
+    margin-left: 86%;
+    z-index: 200;
+    position: absolute;
+}

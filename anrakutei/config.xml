@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="jp.co.anrakutei.anrakutei_info" android-versionCode="21" ios-CFBundleVersion="1" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="Orientation" value="portrait" /><!--画面の縦横固定、横固定はlandscape-->
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="android-minSdkVersion" value="15" />
+    <name>安楽亭</name>
+    <description>
+        安楽亭のオフィシャルクーポンアプリです。
+    </description>
+    <author email="system@anrakutei.co.jp" href="http://www.anrakutei.co.jp/">
+        安楽亭システム部
+    </author>
+    <content src="index.html"/>
+    <plugin name="cordova-plugin-whitelist" version="1"/>
+    <plugin name="hu.dpal.phonegap.plugins.spinnerdialog" />
+    <plugin name="com.guinatal.refreshgallery" />
+    <access origin="*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
+    <platform name="android">
+        <allow-intent href="market:*"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+    </platform>
+    <plugin name="plugin.google.maps">
+        <param name="API_KEY_FOR_ANDROID" value="AIzaSyDVsC7W0FdIqe1_X6YXkrNj5Wys5sns2FU" />
+        <param name="API_KEY_FOR_IOS" value="AIzaSyBZl_499d0czKTBuv6WB9GfwidFCxUB5I0" />
+    </plugin>
+</widget>

@@ -1,0 +1,65 @@
+
+.howtoTitle {
+    background-color: #989898;
+}
+
+.toolbar-button {
+    color: #ffffff;
+    padding-left: 0px;
+    padding-right: 16px;
+}
+
+.howtoListItem {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #a3a3a3 !important;
+    padding: 10px 0;
+}
+.howtoListItem h3 {
+    text-align: center;
+    line-height: 30px;
+    margin: 6px 0;
+}
+.howtoListItem hr {
+    margin: 10px 20px;
+}
+.howtoListItem h5 {
+    text-align: center;
+    line-height: 30px;
+    margin: 0 0;
+}
+.howtoListItem img {
+    height: auto;
+    width: 100%;
+}
+.comment {
+    margin: 0 20px;
+}
+.comment p {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0;
+    word-break: break-all;
+    white-space: pre-line;
+}
+
+.howtoListItem .right-block {
+    margin-right: 20px;
+}
+
+.topBtn {
+    position: absolute;
+}
+.pagetop {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin: 0 0;
+}
+.pagetop a {
+    display: block;
+    text-align: right;
+}
+.pagetop img {
+    height: auto;
+    width: 50%;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<ons-page ng-controller="loginctrl" id="list-action" animation="slide" var="page.login">
+	<ons-toolbar class="toolbar--title">
+        <div class="center" >Login <i class="fa fa-times" aria-hidden="true" ng-click="back_home()"></i></div>
+        
+    </ons-toolbar>
+
+		<div>
+			<button class="btn-login-g" id="btn-login-g" ng-click="googlelog()">
+				<i class="fa fa-google-plus" aria-hidden="true" ></i>
+				<div class="text-plg">
+					Google
+				</div>
+			</button> 
+		</div>
+		<div>	
+			<button class="btn-login-f" ng-click="fblog()">
+				<i class="fa fa-facebook" aria-hidden="true"></i>
+				<div class="text-plg">
+					Facebook
+				</div>
+			</button>
+		</div>
+		<div>
+			<button class="btn-login-t" ng-click="">
+				<i class="fa fa-twitter" aria-hidden="true"></i>
+				<div class="text-plg">
+					Twitter
+				</div>
+			</button>
+		</div>
+		<div>
+			<button class="btn-login-y" ng-click="">
+				<i class="fa fa-yahoo" aria-hidden="true"></i>
+				<div class="text-plg">
+					Yahoo!
+				</div>
+			</button>
+		</div>
+		<div>
+			<button class="btn-login-l" ng-click="">
+				<i class="fa fa-linkedin" aria-hidden="true"></i>
+				<div class="text-plg">
+					LINE
+				</div>
+			</button> 
+		</div>
+		<!-- content login form -->
+
+		<div ng-init="getUsers()" class="form-login">
+			<form name="userForm" ng-submit="submit()">
+		      <fieldset>
+		        <label> <span ng-class="{'error': userForm.name.$touched && userForm.name.$invalid}">  </span>
+		          <input type="text" name="name" ng-model="user.name" placeholder="username" required autofocus />
+		        </label><br />
+		        <label> <span ng-class="{'error': userForm.address.$touched && userForm.address.$invalid}">  </span>
+		        <input type="password" name="name" ng-model="user.name" placeholder="password" required autofocus />
+		        </label><br />
+
+		        <button class="btn btn-login">
+	            	Login
+	          	</button>
+		       </fieldset>
+		    </form>
+
+		</div>
+		
+
+</ons-page>

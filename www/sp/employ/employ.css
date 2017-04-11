@@ -1,0 +1,10 @@
+/* CSS Document */
+
+/* layout */
+body {
+	color: #000000;
+}
+/* ツイートボタンの幅 */
+iframe.twitter-share-button {
+    width: 95px!important;
+}

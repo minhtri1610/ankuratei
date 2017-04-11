@@ -1,0 +1,63 @@
+<?
+require_once('../common.inc');
+
+// DB接続
+$conn = @pg_connect("host=".DB_HOST." dbname=".DB_NAME." user=".DB_USER." password=".DB_PASS);
+if($conn == false){
+	exit;
+}
+
+$sql=<<<END
+select m2.tenpocd, m2.tenponm from
+	master.ss_m_syozoku as m1
+	inner join
+		master.ss_m_tenpo as m2
+	on
+		m2.hizuke = m1.hizuke and
+		m2.tenpocd = m1.tenpocd and
+		m2.tm17kbn = '1'
+	inner join
+		master.m_gyotai as m3
+	on
+		m3.gyotaicd = m2.gyotaicd and
+		m3.gyotainm like '%安楽亭%'
+where
+	m1.hizuke = current_date and
+	m1.kaisyacd = 'V001'
+END;
+$result = pg_query($conn,$sql);
+while($row = pg_fetch_array($result)){
+	$tenpoDS[] = array(
+		$row['tenpocd'],
+		$row['tenponm']
+	);
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta id="viewport" name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<title>◆焼肉 安楽亭スマートフォンサイト</title>
+<body style='background-color: rgb(255,255,255);'>
+<img src="./img/yukke_page.jpg" width="100%"><br clear=all />
+<br>
+
+ただいま国産牛ユッケをお取り扱いしている店舗はこちらになります。<br>
+<?
+// SJISエンコードなのはなぜだろう
+if(count($tenpoDS)>0){foreach($tenpoDS as $row){
+		echo "<a href=\"/sp/access.php?tenpo=".urlencode(mb_convert_encoding($row[1],'SJIS-win','UTF-8'))."\">".$row[1]."</a><br>\n";
+}}
+?>
+<!--
+<a href="/sp/access.php?tenpo=%8F%E3%94%F6%97%CE%8Bu%93X">上尾緑ヶ丘店</a><br>
+<a href="/sp/access.php?tenpo=%89F%93s%8B%7B%8B%D1%93X">宇都宮錦店</a><br>
+-->
+<br>
+今後は、認定生食用食肉取扱有資格者を全店に配置する万全の安全体制で、管轄の保健所の許可が下り次第、順次販売店舗数を拡大していく計画です。<br />
+
+<a href="index.html">戻る</a>
+
+</body>
+</html>

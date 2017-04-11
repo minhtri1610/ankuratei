@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<ons-page ng-controller="MapCtrl" ng-device-backbutton="backDeal()" id="cmap">
+    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+        <div class="left" ng-style="{{::iosLeftStyle}}">
+            <img src="img/menu/menu_Icon_1_appmenu_80x72.png" class="menu-icon" single-click="menu.toggleMenu()">
+        </div>
+        <div class="center" ng-style="{{::iosCenterStyle}}">店舗</div>
+    </ons-toolbar>
+    <div id="map" style="z-index: 1;">
+        <div class="searchebar">
+            <div class="now">
+                <ons-button ng-disabled="disabled" single-click="setCenter()" modifier="quiet" class="nowbutton">現在地</ons-button>
+            </div>
+            <div class="search-input-area">
+                <form ng-submit="searchInfo('search-result.html')" class="map-search-form">
+                    <input type="search" placeholder="地名・店名で検索" class="search-input search-input-map" id="search" ng-readonly="readonly" ng-model="keyword" style="background-color: #eeeeee"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <p class="par-message" ng-if="msgFlg">
+        {{message}}
+    </p>
+
+</ons-page>

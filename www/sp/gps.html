@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta id="viewport" name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<title>iPhone Design Patterns-Rounded Rectangle</title>
+	<link rel="stylesheet" href="css/iphone.css" />
+	<script language="javascript"> 
+	<!--
+	var state = 'none';
+
+	function showhide(layer_ref) {
+
+	if (state == 'block') { 
+	state = 'none'; 
+	} 
+	else { 
+	state = 'block'; 
+	} 
+	if (document.getElementById &&!document.all) { 
+	hza = document.getElementById(layer_ref); 
+	hza.style.display = state; 
+	} 
+	} 
+	//--> 
+	</script>
+</head>
+<body id="normal">
+	
+	<div id="header">
+		<h1><img src="images/logo.jpg" width="60" height="35">お近くのお店</h1>
+		<a href="index.html" id="backButton" class="nav">戻る</a>
+	</div>
+	<div align='center'><img src="images/map_sample.jpg" width=270 height=270></div>
+	<ul>	
+		<li><a href="#" class="arrow"  onclick="showhide('result1');">大宮店</a></li>
+	</ul>
+<div id="result1" style="display: none">
+住所:さいたま市大宮区仲町１−５０<br>
+電話:048-647-2734<br>
+営業時間:午前11：30-翌朝3：20<br>
+駐車場:なし
+</div>
+	<ul>	
+		<li><a href="#" class="arrow" onclick="showhide('result2');">大宮大成店</a></li>
+	</ul>
+<div id="result2" style="display: none">
+住所:さいたま市大宮区大成町2-195　２Ｆ<br>
+電話:048-654-2861<br>
+営業時間:午前11:00-翌朝5:00<br>
+駐車場:38台
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,119 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/03/25, 17:00:00
+    Author     : kyo
+*/
+
+.result {
+    width: 100%;
+    background-color: #a65d29;
+    border-bottom: none !important;
+    height: 15%;
+}
+
+.sear-result-scroller {
+    height: 77%;
+    margin: 4%;
+    border-bottom: none !important;
+    background-color: #ffffff;
+    vertical-align: middle;
+    display: block;
+}
+
+.search-result {
+    padding-left: 4%;
+    padding-top: 4%;
+    padding-right: 4%;
+    width: 92%;
+    background-color: #a65d29;
+    border-bottom: none !important;
+    height: 11%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.list {
+    font-size: 20px;
+}
+
+.tenpo-icon {
+    vertical-align: middle;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+}
+
+.search-result
+.result-title {
+    width: 65%;
+    height: 100%;
+    float: left;
+    position: relative;
+    display: table;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.result-title
+.result-title-text {
+    text-align: center;
+    color: #FFF;
+    padding-right: 10%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size:22px;
+}
+
+.result-close {
+    vertical-align: middle;
+    font-size: 28px;
+    width: 28px;
+    margin-top: 8px;
+    margin-right: 3px;
+}
+
+.search-result
+.result-tenpo-icon {
+    max-width: 20%;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    position: relative;
+}
+
+.result-tenpo-icon
+.result-tenpo-icon-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.search-result
+.close-result {
+    width: 15%;
+    height: 100%;
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    float: left;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.search-result
+.close-result-img {
+    vertical-align: middle;
+    width: 80%;
+    top: 50%;
+    float: right;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    position: relative;
+}
