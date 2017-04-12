@@ -3,11 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-loginctrl = function ($scope) {
-
-    // login facebook
+// login facebook
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '245894485817834',
@@ -26,52 +22,70 @@ loginctrl = function ($scope) {
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
 
+loginctrl = function ($scope) {
+
+    // close login page 
+    $scope.back_home = function($window, $location){      
+     
+      myNavigator.pushPage('index.html', {animation: 'fade'});
+    }   
+
     $scope.fblog = function() {
           FB.login(function(response) {
             if (response.status === 'connected') {
               console.log('Logged in.');
               // var data_auth = FB.getAuthResponse();
-              FB.api('/me', {fields: 'name, cover, timezone, email, devices'}, function(response) {
+              FB.api('/me', {fields: 'name, email, devices,verified,picture'}, function(response) {
                 console.log(response);
               });
 
-              $scope.outputInfo(response);
+              $scope.outputInfo(ressponse);
             }
-          }); 
+          }, {scope: 'public_profile,email'});
 
       };
     $scope.outputInfo = function(data) {
-      // console.log(data);
+      console.log(data);
     }
 
     // end login facebook
     
     // login google +
-    // 
     
-    $scope.googlelog = function(){
       gapi.load('auth2', function(){
       // Retrieve the singleton for the GoogleAuth library and set up the client.
       auth2 = gapi.auth2.init({
         client_id: '947920991069-vig9imvcb4vun571lcodv5qghsj7pc3q.apps.googleusercontent.com',
-        cookiepolicy: 'http://localhost:8000',
+        cookiepolicy: 'single_host_origin',
         // Request scopes in addition to 'profile' and 'email'
         scope: 'email'
       });
-      attachSignin(document.getElementById('btn-login-g'));
+      attachSignin(document.getElementById('actionBtn'));
       });
         function attachSignin(element) {
-          console.log(element.id);
+
+         
           auth2.attachClickHandler(element, {},
               function(googleUser) {
-                document.getElementById('name').innerText = "Signed in: " +
-                    googleUser.getBasicProfile().getName();
+
+                    var dataUser = new Array();
+
+                    dataUser.push(googleUser.getBasicProfile().getName());
+
+                    dataUser.push(googleUser.getBasicProfile().getEmail());
+
+                    dataUser.push(googleUser.getBasicProfile().getId());
+
+                    dataUser.push(googleUser.getBasicProfile().getImageUrl());
+
+                    console.log(dataUser);
+
               }, function(error) {
+
                 alert(JSON.stringify(error, undefined, 2));
               });
         }
-    } 
+      //end login google+
     
   };
   app.controller('loginctrl', ['$scope', loginctrl]);
- 
