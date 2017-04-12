@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <ons-page modifier="menu" ng-controller="SlidingMenuCtrl" id="menu" animation="slide">
-    <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
+    <!-- <ons-toolbar class="toolbar--title" ng-style="{{::iosStyle}}" fixed-style>
         <div class="center" ng-style="{{::iosCenterStyle}}">アプリメニュー</div>
-    </ons-toolbar>
+    </ons-toolbar> -->
 
     <ons-list class="menu-list" style="vertical-align: top;">
 
@@ -15,14 +15,17 @@ and open the template in the editor.
        
             <ons-list-item class="menu-login" >
                 <div class="avatar">
-                    <img src="img/slide/slide_icon_okyakusama_80x80.png" style="width: 28px; height: 28px; vertical-align: middle; margin-bottom: 3px;"/>
+                    <img src="img/slide/slide_icon_user_48x48.png" style=""/>
                 </div>
-                <div class="nick_name">
-                    Username:
+                <div class="m-user">
+                    <div class="nick_name">
+                        Username
+                    </div>
+                    <div class="id_user">
+                        ID
+                    </div>
                 </div>
-                <div class="id_user">
-                    ID:
-                </div>
+                
                 <div class="btn-action">
                     <button class="btn-login" ng-click="direct_login()">
                         lOGIN
