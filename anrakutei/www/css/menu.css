@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : kyo
 */
 
-/* 文字サイズの自動調整：ON */
+/* 窶｢ﾂｶﾅｽﾅ｡ﾆ探ﾆ辰ﾆ炭窶堙固ｽﾂｩ窶慊ｮ窶卍ｲﾂ青ｮﾂ：ON */
 .appbody {
     -webkit-text-size-adjust: auto;
 }
@@ -44,7 +44,7 @@ and open the template in the editor.
     padding-top: 13px;
 }
 
-/* タブバーのボーダー設定 */
+/* ﾆ耽ﾆ置ﾆ弛ﾂー窶堙姑畜ﾂーﾆ胆ﾂーﾂ静昶凖ｨ */
 .tab-bar {
     border-top: none;
 }
